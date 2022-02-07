@@ -6,6 +6,10 @@ function mainContentFetch(fileName) {
     })
     .then((html) => {
       document.getElementById("content").innerHTML = html;
+
+      // Remembers last visited subpage in the
+      // session be used later in "contentStorage.js"
+      sessionStorage.setItem("lastOpenedSubpage", fileName);
     });
 
   // Gets the styles for the module by creating a '<link>'

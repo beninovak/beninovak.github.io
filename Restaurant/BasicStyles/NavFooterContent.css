@@ -14,6 +14,7 @@ nav .logo {
 nav .logo img {
   width: 70px;
   height: 70px;
+  cursor: pointer;
 }
 
 nav .slogan {
@@ -209,4 +210,4 @@ footer .copyright span, footer .address span, footer .contact span {
     width: 15%;
   }
 }
-/*# sourceMappingURL=NavAndFooter.css.map */
+/*# sourceMappingURL=NavFooterContent.css.map */

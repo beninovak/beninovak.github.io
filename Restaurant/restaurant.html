@@ -10,14 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Dancing+Script:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
 
-    <title>Restaurant</title>
+    <title>Benny's pizza</title>
 
 </head>
-<body onload="loadHomepage()">
+<body>
 
     <header>
         <nav class="container row">
-            <div class="logo"><img src="Imgs/Pizzeria-logo.png"></div>
+            <div class="logo"><img src="Imgs/Pizzeria-logo.png" onclick="mainContentFetch('home')"></div>
             <div class="slogan">Benny's Pizza</div>
 
             <div class="links container row">
@@ -29,10 +29,32 @@
         </nav>
     </header>
 
-    <div id="content"></div>
-    
-    <!--Fills content '<div>' right after it loads-->
-    <script src="defaultContent.js"></script>
+    <div id="content">
+        <div class="main-home container">
+            <div class="block" id="img1">
+                <img src="Imgs/pizza1.jpg">
+                <div class="text">Only the freshest ingredients</div>
+            </div>
+            
+            <div class="block" id="img2">
+                <img src="Imgs/pizza2.jpg">
+                <div class="text">Made with love and passion</div>
+            </div>
+        
+            <div class="block" id="img3">
+                <img src="Imgs/pizza3.jpg">
+                <div class="text" id="first">Using traditional methods</div>
+                <div class="text" id="second">Made with love and passion</div>
+            </div>
+        
+            <div class="block" id="img4"><img src="Imgs/pizza4.jpg"></div>
+        
+            <div class="block" id="img5">
+                <img src="Imgs/pizza5.jpg">
+                <div class="text">Using traditional methods</div>
+            </div>
+        </div>
+    </div>
 
     <footer class="container row">
 
@@ -80,6 +102,7 @@
     </footer>
 
     <script src="contentFetch.js"></script>
+    <script src="contentStorage.js"></script>
     
 </body>
 </html>

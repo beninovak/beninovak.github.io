@@ -14,6 +14,7 @@ nav .logo {
 nav .logo img {
   width: 70px;
   height: 70px;
+  cursor: pointer;
 }
 
 nav .slogan {
