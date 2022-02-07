@@ -1,0 +1,158 @@
+.main-about {
+  padding: 1em;
+  background-color: #eb9f1a;
+  font-family: "Bakbak One", cursive;
+}
+
+.main-about .backstory-future {
+  text-align: center;
+}
+
+.main-about .backstory-future #begin-title {
+  margin: 1.5em 0;
+  font-size: 36px;
+}
+
+.main-about .backstory-future #intro {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 1em;
+}
+
+.main-about .backstory-future #family-img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 5px ridge #9e3505;
+}
+
+.main-about .backstory-future #cap {
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 0.25em;
+  font-family: "Dancing Script", cursive;
+}
+
+.main-about .backstory-future h1 {
+  margin: 1.5em 0 0.25em 0;
+}
+
+.main-about h1#staff {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+
+.main-about .staff {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-about .staff .member h4 {
+  text-align: center;
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
+.main-about .staff .member .description {
+  width: 80%;
+  margin: 1em auto;
+  text-align: center;
+}
+
+.main-about .staff .member .portrait {
+  max-width: 100%;
+  height: 330px;
+  width: 330px;
+  border-radius: 50%;
+  border: 3px solid black;
+  margin: 0 auto;
+}
+
+.main-about .staff .member #portrait1 {
+  background-image: url(../Imgs/chef.jpg);
+  background-position: bottom -130px right 450px;
+}
+
+.main-about .staff .member #portrait2 {
+  background-image: url(../Imgs/waitress.jpg);
+  background-position: bottom 0 right -40px;
+}
+
+.main-about .staff .member #portrait3 {
+  background-image: url(../Imgs/manager.jpg);
+  background-position: bottom 0 right -60px;
+  background-size: cover;
+}
+
+@media (min-width: 600px) {
+  .backstory-future {
+    padding: 0 2.5em;
+  }
+}
+
+@media (min-width: 800px) {
+  #family-img {
+    max-height: 80vh;
+  }
+  .staff {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .staff .member {
+    width: calc(50%);
+  }
+  .staff .member:nth-of-type(3) {
+    width: 100%;
+  }
+  .staff .member #desc3 {
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1000px) {
+  #intro, .vision {
+    max-width: 75%;
+    margin: 0 auto;
+  }
+  #family-img {
+    max-height: 70vh;
+  }
+  .staff .member .description {
+    max-width: 70%;
+  }
+  .staff .member #desc3 {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #intro, .vision {
+    max-width: 65%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1400px) {
+  #intro, .vision {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+  .staff .member .description {
+    max-width: 50%;
+  }
+  .staff .member #desc3 {
+    max-width: 25%;
+  }
+}
+/*# sourceMappingURL=about.css.map */

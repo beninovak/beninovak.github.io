@@ -1,0 +1,251 @@
+body {
+  margin: 0;
+}
+
+nav {
+  background-color: #4bcc8e;
+  border-bottom: 5px solid #cc4b89;
+}
+
+nav .logo {
+  width: 20%;
+}
+
+nav .logo img {
+  width: 70px;
+  height: 70px;
+}
+
+nav .slogan {
+  width: 80%;
+  text-align: center;
+  font-size: 42px;
+  font-family: "Pacifico", cursive;
+}
+
+nav .links {
+  width: 100%;
+  padding: .5em 0 0 0;
+  margin-top: .25em;
+  border-top: 2px solid black;
+  font-size: 24px;
+  font-family: "Bakbak One", cursive;
+}
+
+nav .links a {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+  cursor: pointer;
+}
+
+nav .links a:hover {
+  color: white;
+  -webkit-transition-duration: .4s;
+          transition-duration: .4s;
+}
+
+footer {
+  font-family: "Bakbak One", cursive;
+  background-color: #cc4b89;
+  font-size: 18px;
+  border-top: 5px solid black;
+}
+
+footer i {
+  font-style: normal;
+}
+
+footer a {
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: white;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+footer .site-links {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+footer .site-links p {
+  margin: 0.5em 0;
+}
+
+footer .site-links p:first-child {
+  font-size: 24px;
+}
+
+footer .follow-us {
+  width: 100%;
+  border-top: 0.5px solid white;
+}
+
+footer .follow-us p {
+  margin: 0.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  line-height: 50px;
+  margin: 20px 0;
+}
+
+footer .follow-us p:first-child {
+  font-size: 24px;
+}
+
+footer .follow-us p img {
+  width: 50px;
+  height: 50px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+footer .copyright, footer .address, footer .contact {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+footer .copyright span, footer .address span, footer .contact span {
+  color: white;
+}
+
+@media (min-width: 600px) {
+  nav .logo {
+    width: 30%;
+  }
+  nav .logo img {
+    width: 120px;
+    height: 120px;
+  }
+  nav .slogan {
+    width: 70%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    font-size: 48px;
+    text-align: left;
+  }
+  nav .links {
+    margin-top: 15px;
+  }
+  nav .links a {
+    width: 50%;
+  }
+  footer .site-links {
+    width: 50%;
+    line-height: 35px;
+  }
+  footer .follow-us {
+    width: 50%;
+    border: none;
+  }
+  footer .follow-us p {
+    line-height: 35px;
+  }
+  footer .follow-us p img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 800px) {
+  nav .logo {
+    width: 20%;
+  }
+  nav .slogan {
+    width: 80%;
+    font-size: 60px;
+    text-align: center;
+  }
+  nav .links a {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1000px) {
+  nav .logo img {
+    width: 135px;
+    height: 135px;
+  }
+  nav .links {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  nav .links a {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav .logo img {
+    width: 150px;
+    height: 150px;
+  }
+  nav .slogan {
+    font-size: 70px;
+  }
+  nav .links {
+    padding: .5em 0 0 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  nav .links a {
+    width: 15%;
+  }
+}
+
+/*----------BASIC FLEX AND VARIABLES------------*/
+.container {
+  max-width: 100%;
+  padding: 1em 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nw {
+  -ms-flex-wrap: nowrap !important;
+  flex-wrap: nowrap !important;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/*# sourceMappingURL=basic.css.map */

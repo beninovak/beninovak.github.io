@@ -1,0 +1,570 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/*-------------------------------
+---------------------------------
+STYLES UP TO 600px SCREEN WIDTH
+---------------------------------
+-------------------------------*/
+#video-block {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  scroll-behavior: auto;
+}
+
+#video-block video {
+  width: 100%;
+  scroll-behavior: auto;
+  overflow: clip;
+}
+
+#video-block .headline {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: rgba(50, 161, 93, 0.75);
+  position: absolute;
+  left: 0;
+  top: 1em;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+}
+
+#video-block .headline p {
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-size: 22px;
+}
+
+#video-block #scroll-btn {
+  width: 50px;
+  height: 50px;
+  outline: 3px solid black;
+  border: 3px solid white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 10%;
+  left: calc(50% - 28px);
+  font-size: 42px;
+  text-align: center;
+  display: none;
+}
+
+#video-block #scroll-btn img {
+  width: 35px;
+  height: 35px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.images #first {
+  background-image: url(Assets/sharpener1.jpg);
+}
+
+.images #second {
+  background-image: url(Assets/sharpener2.jpg);
+}
+
+.images #third {
+  background-image: url(Assets/sharpener3.jpg);
+}
+
+.images #fourth {
+  background-image: url(Assets/sharpener4.jpg);
+}
+
+.images .img-description {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vw * (1/(16/9)));
+  background-repeat: no-repeat;
+  background-size: 100vw auto;
+  border-top: 3px solid black;
+}
+
+.images .img-description:nth-of-type(4) {
+  border-bottom: 3px solid black;
+}
+
+.images .img-description .background {
+  height: 1.5em;
+  line-height: 1.5em;
+  font-size: 32px;
+  background-color: rgba(50, 161, 93, 0.6);
+}
+
+.images .img-description .background h1 {
+  text-align: center;
+  color: white;
+  margin: 0;
+  font-size: 1em;
+}
+
+.images .img-description .img-caption {
+  position: absolute;
+  left: 0;
+  bottom: 2em;
+  padding: 0.5em;
+  color: white;
+  font-size: 18px;
+  max-width: 50%;
+  border-radius: 0 5px 5px 0;
+  border: 1px solid white;
+  border-left: none;
+  background-color: rgba(50, 161, 93, 0.75);
+}
+
+.customer-reviews {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 2em;
+}
+
+.customer-reviews h1 {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.customer-reviews h1:first-child {
+  font-size: 48px;
+  line-height: 60px;
+  margin-bottom: 0.5em;
+}
+
+.customer-reviews .customer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 2em 0;
+}
+
+.customer-reviews .customer img {
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#34ad9e), to(#bef3f1));
+  background-image: linear-gradient(#34ad9e, #bef3f1);
+}
+
+.customer-reviews .customer .customer-name {
+  width: 75%;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-align: left;
+  color: gray;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.customer-reviews .customer .caption {
+  width: 75%;
+  margin: 0 auto;
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  border-radius: 15px;
+  border: 2px solid black;
+  background-color: #32a15d;
+}
+
+.discount-block #first {
+  background-color: #8af3b2;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.discount-block #second {
+  background-color: #5bd68a;
+}
+
+.discount-block #third {
+  background-color: #42bb71;
+}
+
+.discount-block #fourth {
+  background-color: #32a15d;
+}
+
+.discount-block #fifth {
+  background-color: #238649;
+}
+
+.discount-block p {
+  margin: 0;
+  padding: 1em;
+  font-size: 28px;
+  text-align: center;
+}
+
+.discount-block p img {
+  width: 100%;
+}
+
+.discount-block p span {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.discount-block p button {
+  display: block;
+  margin: 0 auto;
+  width: 75%;
+  height: 100px;
+  font-size: 36px;
+  -webkit-box-shadow: 0 8px #666;
+          box-shadow: 0 8px #666;
+  background-color: #5bd68a;
+  border-radius: 10px;
+  border: 3px outset white;
+  font-weight: bold;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
+.discount-block p button:hover {
+  background-color: #49af70;
+}
+
+.discount-block p button:active {
+  -webkit-box-shadow: 0 5px #414141;
+          box-shadow: 0 5px #414141;
+  background-color: #2a7c49;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+#order-form {
+  display: none;
+  padding: 1em 2em;
+  font-size: 20px;
+  scroll-behavior: smooth;
+  color: white;
+  background-color: #1a703b;
+}
+
+#order-form label {
+  font-weight: bold;
+}
+
+#order-form input:not([type="radio"]) {
+  width: calc(100% - 2em);
+  margin: 0 auto 1em;
+  height: 30px;
+  padding: .1em 1em;
+  font-size: 20px;
+}
+
+#order-form input:not([type="radio"])::-webkit-input-placeholder {
+  font-size: 18px;
+  font-style: italic;
+}
+
+#order-form input:not([type="radio"]):-ms-input-placeholder {
+  font-size: 18px;
+  font-style: italic;
+}
+
+#order-form input:not([type="radio"])::-ms-input-placeholder {
+  font-size: 18px;
+  font-style: italic;
+}
+
+#order-form input:not([type="radio"])::placeholder {
+  font-size: 18px;
+  font-style: italic;
+}
+
+#order-form #postcode::-webkit-outer-spin-button,
+#order-form #postcode::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+#order-form input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#order-form p {
+  border-top: 3px solid white;
+  margin: 0.5em 0 0 0;
+  padding-top: 0.5em;
+  font-size: 32px;
+}
+
+#order-form #submit {
+  display: block;
+  width: 50%;
+  height: 2em;
+  margin: 1.5em 0 0 0;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: #5bd68a;
+  border: 3px outset white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 6px #666;
+          box-shadow: 0 6px #666;
+}
+
+#order-form #submit:hover {
+  background-color: #49af70;
+}
+
+#order-form #submit:active {
+  -webkit-box-shadow: 0 5px #414141;
+          box-shadow: 0 5px #414141;
+  background-color: #2a7c49;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 600 to 799px WIDTH
+---------------------------------
+-------------------------------*/
+@media (min-width: 600px) {
+  #video-block .headline {
+    top: 2em;
+    height: 100px;
+    line-height: 100px;
+  }
+  #video-block .headline p {
+    font-size: 30px;
+  }
+  .images .img-description .background {
+    height: 2em;
+    line-height: 2em;
+    font-size: 36px;
+  }
+  .images .img-description .img-caption {
+    font-size: 24px;
+  }
+  .discount-block p img {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+  .discount-block p button {
+    width: 60%;
+  }
+  #order-form input:not([type="radio"]) {
+    width: 80%;
+  }
+  #order-form input[type="radio"] + label[for="creditcard"] {
+    margin-right: 5em;
+  }
+  #order-form #submit {
+    max-width: 40%;
+  }
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 800 to 999px WIDTH
+---------------------------------
+-------------------------------*/
+@media (min-width: 800px) {
+  .customer-reviews .customer .customer-name, .customer-reviews .customer .caption {
+    width: 60%;
+  }
+  .discount-block #first {
+    font-size: 48px;
+  }
+  .discount-block p {
+    font-size: 36px;
+  }
+  .discount-block p img {
+    width: 65%;
+  }
+  .discount-block p button {
+    width: 50%;
+    font-size: 42px;
+  }
+  #order-form {
+    text-align: center;
+  }
+  #order-form input:not([type="radio"]) {
+    width: 60%;
+    text-align: center;
+  }
+  #order-form input[type="radio"] + label[for="creditcard"] {
+    margin-right: 5em;
+  }
+  #order-form #submit {
+    max-width: 30%;
+    margin: 1.5em auto 0 auto;
+  }
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 1000 to 1199px WIDTH
+---------------------------------
+-------------------------------*/
+@media (min-width: 1000px) {
+  #video-block .headline {
+    top: 3em;
+    height: 120px;
+    line-height: 120px;
+  }
+  #video-block .headline p {
+    font-size: 42px;
+  }
+  .images .img-description .background {
+    font-size: 42px;
+  }
+  .images .img-description .img-caption {
+    font-size: 30px;
+    bottom: 3em;
+  }
+  .customer-reviews .customer .customer-name, .customer-reviews .customer .caption {
+    width: 40%;
+  }
+  .discount-block p img {
+    width: 55%;
+  }
+  .discount-block p button {
+    width: 40%;
+    height: 120px;
+    font-size: 46px;
+  }
+  #order-form input:not([type="radio"]) {
+    width: 40%;
+  }
+  #order-form input[type="radio"] + label[for="creditcard"] {
+    margin-right: 5em;
+  }
+  #order-form #submit {
+    max-width: 20%;
+    height: 3em;
+    font-size: 30px;
+  }
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 1200 to 1399px WIDTH
+---------------------------------
+-------------------------------*/
+@media (min-width: 1200px) {
+  .images .img-description .background {
+    height: 2.5em;
+    line-height: 2.5em;
+  }
+  .images .img-description .img-caption {
+    font-size: 36px;
+    padding: 0.5em 2em;
+    border-radius: 0 10px 10px 0;
+  }
+  .customer-reviews {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .customer-reviews h1 {
+    width: 100%;
+  }
+  .customer-reviews .customer {
+    width: 50%;
+  }
+  .customer-reviews .customer .customer-name, .customer-reviews .customer .caption {
+    width: 70%;
+  }
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 1400 to 1599px WIDTH
+---------------------------------
+-------------------------------*/
+@media (min-width: 1400px) {
+  #order-form input:not([type="radio"]) {
+    width: 35%;
+  }
+  #order-form input[type="radio"] + label[for="creditcard"] {
+    margin-right: 5em;
+  }
+  #order-form #submit {
+    max-width: 15%;
+  }
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 1600 to 1799px WIDTH
+---------------------------------
+-------------------------------*/
+@media (min-width: 1600px) {
+  #video-block #scroll-btn {
+    display: block;
+  }
+  #video-block .headline {
+    height: 150px;
+    line-height: 150px;
+  }
+  #video-block .headline p {
+    font-size: 60px;
+  }
+  .images .img-description .background {
+    height: 2em;
+    line-height: 2em;
+    font-size: 60px;
+  }
+  .customer-reviews {
+    height: 100vh;
+  }
+  .customer-reviews .customer {
+    width: 25%;
+  }
+  .customer-reviews .customer .customer-name, .customer-reviews .customer .caption {
+    width: 80%;
+  }
+}
+
+/*-------------------------------
+---------------------------------
+STYLES FROM 1800px WIDTH AND ABOVE  
+---------------------------------
+-------------------------------*/
+@media (min-width: 1800px) {
+  #video-block video {
+    height: 100vh;
+    -o-object-fit: fill;
+       object-fit: fill;
+  }
+  .images .img-description {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100vw auto;
+    background-position: bottom;
+    min-height: unset;
+    height: 100vh;
+  }
+  .images .img-description .img-caption {
+    font-size: 48px;
+  }
+}
+/*# sourceMappingURL=šilček.css.map */

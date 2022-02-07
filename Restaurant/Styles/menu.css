@@ -1,0 +1,76 @@
+.main-menu {
+  padding: 2em 1em;
+  background-image: url(../Imgs/wood.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu {
+  font-family: "Bakbak One", cursive;
+  background-color: #eb9f1a;
+  padding: 1.5em;
+  border-radius: 5px;
+}
+
+.menu .section {
+  background: #cc5c4b;
+  padding: 0 1em;
+}
+
+.menu .section h1 {
+  font-size: 40px;
+  font-family: "Pacifico", cursive;
+  margin: 0.25em 0 0.5em 0;
+}
+
+.menu .section .menu-item {
+  margin-bottom: 2em;
+}
+
+.menu .section .menu-item h3 {
+  width: 100%;
+  margin: 0.5em 0;
+  font-size: 20px;
+}
+
+.menu .section .menu-item .ingredients {
+  width: 80%;
+}
+
+.menu .section .menu-item .price {
+  width: 20%;
+  text-align: right;
+  font-size: 18px;
+}
+
+@media (min-width: 800px) {
+  .menu {
+    padding: 2em;
+  }
+  .menu .section {
+    padding: 0 2em;
+  }
+  .menu .section h1 {
+    font-size: 48px;
+  }
+  .menu .section .menu-item h3 {
+    font-size: 24px;
+  }
+  .menu .section .menu-item .ingredients {
+    font-size: 18px;
+  }
+  .menu .section .menu-item .price {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .main-menu {
+    padding: 2em 0;
+  }
+  .menu {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+/*# sourceMappingURL=menu.css.map */

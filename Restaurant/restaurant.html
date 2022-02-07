@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/basic.css" type="text/css">
+    <link rel="stylesheet" href="Styles/home.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Dancing+Script:wght@500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <title>Restaurant</title>
+
+</head>
+<body onload="loadHomepage()">
+
+    <header>
+        <nav class="container row">
+            <div class="logo"><img src="Imgs/Pizzeria-logo.png"></div>
+            <div class="slogan">Benny's Pizza</div>
+
+            <div class="links container row">
+                <a onclick="mainContentFetch('home')">HOME</a>
+                <a onclick="mainContentFetch('menu')">MENU</a>
+                <a onclick="mainContentFetch('suppliers')">SUPPLIERS</a>
+                <a onclick="mainContentFetch('about')">ABOUT US</a>               
+            </div>
+        </nav>
+    </header>
+
+    <div id="content"></div>
+    
+    <!--Fills content '<div>' right after it loads-->
+    <script src="defaultContent.js"></script>
+
+    <footer class="container row">
+
+        <div class="site-links">
+            <p><b>Site links:</b></p>
+            <p><a onclick="mainContentFetch('home')">Home</a></p>
+            <p><a onclick="mainContentFetch('menu')">Menu</a></p>
+            <p><a onclick="mainContentFetch('suppliers')">Suppliers</a></p>
+            <p><a onclick="mainContentFetch('about')">About us</a></p>
+        </div>
+
+        <div class="follow-us">
+            <p><b>Follow us on:</b></p>
+
+            <p>
+                <i><a href="#">TikTok</a></i>
+                <a href="#"><img src="Icons/Tiktok.svg"/></a>
+            </p>
+            <p>
+                <i><a href="#">Twitter</a></i>
+                <a href="#"><img src="Icons/Twitter.svg"/></a>
+            </p>          
+            <p>
+                <i><a href="#">Facebook</a></i>
+                <a href="#"><img src="Icons/Facebook.svg"/></a>
+            </p>
+            <p>
+                <i><a href="#">Instagram</a></i>
+                <a href="#"><img src="Icons/Instagram.svg"/></a>
+            </p>
+
+        </div>        
+
+        <div class="address">Visit us at: 
+            <span>99 Hawley St, Sheffield City Centre, Sheffield S1 2EA</span>
+        </div>
+
+        <div class="contact">Write to us on:
+            <span>Bennypizza@gmail.com</span> or call on 
+            <span>07911&nbsp-&nbsp123456</span>
+        </div>
+
+        <div class="copyright">Copyright 2022 &#169; - All rights reserved</div>
+
+    </footer>
+
+    <script src="contentFetch.js"></script>
+    
+</body>
+</html>

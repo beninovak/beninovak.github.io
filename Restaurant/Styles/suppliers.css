@@ -1,0 +1,88 @@
+.main-suppliers {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #cc5c4b;
+}
+
+.main-suppliers .supplier {
+  background-color: #eb9f1a;
+  padding: 1em;
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 2em;
+  border: 4px ridge #eb9f1a;
+}
+
+.main-suppliers .supplier .supply {
+  font-size: 36px;
+  font-family: "Pacifico", cursive;
+}
+
+.main-suppliers .supplier .supplier-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main-suppliers .supplier .supplier-info .address {
+  font-family: "Bakbak One", cursive;
+}
+
+.main-suppliers .supplier .supplier-info .address p {
+  margin: 0.5em 0;
+}
+
+.main-suppliers .supplier .supplier-info img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.main-suppliers .thanks {
+  font-family: "Dancing Script", cursive;
+  font-size: 2em;
+  padding: 0.5em;
+  border: 4px ridge #eb9f1a;
+  background-color: #eb9f1a;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.main-suppliers .thanks span {
+  font-size: 1.2em;
+  text-align: center;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.5em;
+}
+
+@media (min-width: 800px) {
+  .main-suppliers {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .main-suppliers .supplier {
+    padding: 1em 1.5em;
+    width: calc(50% - 3.5em - 8px);
+  }
+  .main-suppliers .thanks {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=suppliers.css.map */
