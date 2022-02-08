@@ -9,7 +9,11 @@
   font-family: "Bakbak One", cursive;
   background-color: #eb9f1a;
   padding: 1.5em;
-  border-radius: 5px;
+  border-radius: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .menu .section {
@@ -20,7 +24,7 @@
 .menu .section h1 {
   font-size: 40px;
   font-family: "Pacifico", cursive;
-  margin: 0.25em 0 0.5em 0;
+  margin: 0.25em 0;
 }
 
 .menu .section .menu-item {
@@ -29,7 +33,7 @@
 
 .menu .section .menu-item h3 {
   width: 100%;
-  margin: 0.5em 0;
+  margin: 0 0 0.5em 0;
   font-size: 20px;
 }
 
@@ -44,17 +48,14 @@
 }
 
 @media (min-width: 800px) {
-  .menu {
-    padding: 2em;
-  }
   .menu .section {
     padding: 0 2em;
   }
   .menu .section h1 {
-    font-size: 48px;
+    font-size: 42px;
   }
   .menu .section .menu-item h3 {
-    font-size: 24px;
+    font-size: 22px;
   }
   .menu .section .menu-item .ingredients {
     font-size: 18px;
@@ -65,9 +66,6 @@
 }
 
 @media (min-width: 1000px) {
-  .main-menu {
-    padding: 2em 0;
-  }
   .menu {
     max-width: 1000px;
     margin: 0 auto;

@@ -5,6 +5,12 @@ body {
 nav {
   background-color: #4bcc8e;
   border-bottom: 5px solid #cc4b89;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 nav .logo {
@@ -28,6 +34,12 @@ nav .links {
   width: 100%;
   padding: .5em 0 0 0;
   margin-top: .25em;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   border-top: 2px solid black;
   font-size: 24px;
   font-family: "Bakbak One", cursive;
@@ -51,6 +63,12 @@ footer {
   background-color: #cc4b89;
   font-size: 18px;
   border-top: 5px solid black;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 footer i {
@@ -91,15 +109,8 @@ footer .follow-us {
 
 footer .follow-us p {
   margin: 0.5em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   line-height: 50px;
-  margin: 20px 0;
+  margin: 0.5em 0;
 }
 
 footer .follow-us p:first-child {
@@ -211,42 +222,11 @@ footer .copyright span, footer .address span, footer .contact span {
   }
 }
 
-/*----------BASIC FLEX AND VARIABLES------------*/
 .container {
   max-width: 100%;
   padding: 1em 2em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.nw {
-  -ms-flex-wrap: nowrap !important;
-  flex-wrap: nowrap !important;
-}
-
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
-.col {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
 }
 /*# sourceMappingURL=basic.css.map */

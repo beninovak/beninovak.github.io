@@ -12,7 +12,7 @@
 
 .main-suppliers .supplier {
   background-color: #eb9f1a;
-  padding: 1em;
+  padding: 1em 1.5em;
   max-width: 100%;
   border-radius: 5px;
   margin-bottom: 2em;
@@ -24,27 +24,17 @@
   font-family: "Pacifico", cursive;
 }
 
-.main-suppliers .supplier .supplier-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 .main-suppliers .supplier .supplier-info .address {
   font-family: "Bakbak One", cursive;
 }
 
 .main-suppliers .supplier .supplier-info .address p {
-  margin: 0.5em 0;
+  margin: 0.25em 0;
 }
 
 .main-suppliers .supplier .supplier-info img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .main-suppliers .thanks {
@@ -55,11 +45,15 @@
   background-color: #eb9f1a;
   border-radius: 10px;
   text-align: center;
+  width: 100%;
+}
+
+.main-suppliers .thanks p {
+  margin: 0;
 }
 
 .main-suppliers .thanks span {
   font-size: 1.2em;
-  text-align: center;
   font-weight: 700;
   display: block;
   margin-top: 0.5em;
@@ -78,11 +72,7 @@
             justify-content: space-between;
   }
   .main-suppliers .supplier {
-    padding: 1em 1.5em;
     width: calc(50% - 3.5em - 8px);
-  }
-  .main-suppliers .thanks {
-    width: 100%;
   }
 }
 /*# sourceMappingURL=suppliers.css.map */
