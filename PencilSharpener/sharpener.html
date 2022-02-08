@@ -1,198 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sharpener.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="sharpener.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Šilček</title>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="video-block">
-        <video type="video/mp4" autoplay muted loop id="vid">
-            <!--<source src="../Assets/sharpener-vid.mp4" type="video/mp4"/>-->
-            <!--Upper src won't work on github pages...it must have the below link -->
-            <!--When using on local use above link-->
-            <source src="https://github.com/beninovak/beninovak.github.io/raw/main/PencilSharpener/Assets/sharpener-vid.mp4" type="video/mp4"/>
-        </video>
+      <video type="video/mp4" autoplay muted loop id="vid">
+        <!--<source src="../Assets/sharpener-vid.mp4" type="video/mp4"/>-->
+        <!--Upper src won't work on github pages...it must have the below link -->
+        <!--When using on local use above link-->
+        <source
+          src="https://github.com/beninovak/beninovak.github.io/raw/main/PencilSharpener/Assets/sharpener-vid.mp4"
+          type="video/mp4"
+        />
+      </video>
 
-        <div class="headline">
-            <p>Šilček, kot ga še nikoli niste videli</p>
-        </div>
+      <div class="headline">
+        <p>Šilček, kot ga še nikoli niste videli</p>
+      </div>
 
-        <div class="clickable" id="scroll-btn" onclick="scroll()">
-            <img src="Assets/arrow.svg"/>
-        </div>
+      <div class="clickable" id="scroll-btn" onclick="scroll()">
+        <img src="Assets/arrow.svg" />
+      </div>
     </div>
 
     <div class="images">
-        <div id="first" class="img-description">
-            <div class="background">
-                <h1>Popolnoma nov dezajn</h1>
-            </div>
+      <div id="first" class="img-description">
+        <h1>Popolnoma nov dezajn</h1>
+        <div class="img-caption">Nemogoča lepota</div>
+      </div>
 
-            <div class="img-caption">
-                Nemogoča lepota
-            </div>
-        </div>
+      <div id="second" class="img-description">
+        <h1>Izjemna praktičnost</h1>
+        <div class="img-caption">Sede v žep</div>
+      </div>
 
-        <div id="second" class="img-description">
-            <div class="background">
-                <h1>Izjemna praktičnost</h1>
-            </div> 
+      <div id="third" class="img-description">
+        <h1>Neprekosljiva eleganca</h1>
+        <div class="img-caption">Lahko stoji na glavi</div>
+      </div>
 
-            <div class="img-caption">
-                Sede v žep
-            </div>
-        </div>
-
-        <div id="third" class="img-description">
-            <div class="background">
-                <h1>Neprekosljiva eleganca</h1>
-            </div>
-
-            <div class="img-caption">
-                Lahko stoji na glavi
-            </div>            
-        </div>
-
-        <div id="fourth" class="img-description">
-            <div class="background">
-                <h1>Osupljiv oprijem</h1>
-            </div>  
-
-            <div class="img-caption">
-                Kva ga prime
-            </div>          
-        </div>
+      <div id="fourth" class="img-description">
+        <h1>Osupljiv oprijem</h1>
+        <div class="img-caption">Kva ga prime</div>
+      </div>
     </div>
 
     <div class="customer-reviews">
-        <h1>Nam ne verjamete?</h1>
-        <h1>Samo poglejte si te sumljivo zadovoljne stranke!</h1>
+      <h1>Nam ne verjamete?</h1>
+      <h1>Samo poglejte si te sumljivo zadovoljne stranke!</h1>
 
-        <div class="customer">
-            <img src="Assets/babi-se-strinja.png"/>
+      <div class="customer">
+        <img src="Assets/babi-se-strinja.png" />
 
-            <div class="customer-name">
-                Marija - Hrastje pri Grosupljem
-            </div>
+        <div class="customer-name">Marija - Hrastje pri Grosupljem</div>
 
-            <div class="caption">
-                "Resnično neverjetno, nikoli še 
-                nisem tako hitro ošilila svinčnika!"
-            </div>
-            
+        <div class="caption">
+          "Resnično neverjetno, nikoli še nisem tako hitro ošilila svinčnika!"
         </div>
+      </div>
 
-        <div class="customer">
-            <img src="Assets/vesel-dedi.png"/>
+      <div class="customer">
+        <img src="Assets/vesel-dedi.png" />
 
-            <div class="customer-name">
-                Stane - Mlaka pri Kranju
-            </div>
+        <div class="customer-name">Stane - Mlaka pri Kranju</div>
 
-            <div class="caption">
-                "Ko mi je vnuk prvič povedal za ta šilček
-                mu nisem verjel. Po le nekaj minutah pa sem
-                razumel njegovo osuplost. Vedel sem, da 
-                bo ta izum spremenil svet!"
-            </div>
+        <div class="caption">
+          "Ko mi je vnuk prvič povedal za ta šilček mu nisem verjel. Po le nekaj
+          minutah pa sem razumel njegovo osuplost. Vedel sem, da bo ta izum
+          spremenil svet!"
         </div>
+      </div>
 
-        <div class="customer">
-            <img src="Assets/rich-dedi.png"/>
+      <div class="customer">
+        <img src="Assets/rich-dedi.png" />
 
-            <div class="customer-name">
-                Borut - Celje
-            </div>
+        <div class="customer-name">Borut - Celje</div>
 
-            <div class="caption">
-                "Gotovo smo že vsi slišali starodavni 
-                kitajski pregovor - 'Čas je denar'.
-                S tem šilčkom mi ga preostane ogromno!"
-            </div>
+        <div class="caption">
+          "Gotovo smo že vsi slišali starodavni kitajski pregovor - 'Čas je
+          denar'. S tem šilčkom mi ga preostane ogromno!"
         </div>
+      </div>
 
-        <div class="customer">
-            <img src="Assets/vesel-dedi2.png"/>
+      <div class="customer">
+        <img src="Assets/vesel-dedi2.png" />
 
-            <div class="customer-name">
-                Tone - Izola
-            </div>
+        <div class="customer-name">Tone - Izola</div>
 
-            <div class="caption">
-                "V Jugoslaviji smo v šoli o takih izumih
-                lahko le fantazirali. Neverjetno!"
-            </div>
+        <div class="caption">
+          "V Jugoslaviji smo v šoli o takih izumih lahko le fantazirali.
+          Neverjetno!"
         </div>
+      </div>
     </div>
 
     <div class="discount-block">
-        <p id="first">Pohitite dokler je še v zalogi!</p>
-        <p id="second">
-            Ob takojšnem naročilu prejmete 20% popusta
-            in <b>ZASTONJ</b> svinčnik!!!
-            <img src="Assets/pencil.png"/>
-        </p>
-        <p id="third">TOREJ KAJ ŠE ČAKATE?</p>
-        <p id="fourth">
-            Lahko nas pokličete na <span>061-825-333</span>,
-            pišete na <span>silcekprodaja@gmail.com</span>
-        </p>
+      <p id="first">Pohitite dokler je še v zalogi!</p>
+      <p id="second">
+        Ob takojšnem naročilu prejmete 20% popusta in <b>ZASTONJ</b> svinčnik!!!
+        <img src="Assets/pencil.png" />
+      </p>
+      <p id="third">TOREJ KAJ ŠE ČAKATE?</p>
+      <p id="fourth">
+        Lahko nas pokličete na <span>061-825-333</span>, pišete na
+        <span>silcekprodaja@gmail.com</span>
+      </p>
 
-        <p id="fifth">
-            Ali pa naročite samo z enim klikom kar tukaj!
-            <button class="clickable" onclick="displayOrderBlock()">NAROČITE</button>
-        </p>
-
+      <p id="fifth">
+        Ali pa naročite samo z enim klikom kar tukaj!
+        <button class="clickable" onclick="displayOrderBlock()">
+          NAROČITE
+        </button>
+      </p>
     </div>
 
     <form action="#" id="order-form">
-        <label for="name">Ime:</label><br/>
-        <input type="text" id="name"/><br/>
-        
-        <label for="lastname">Priimek:</label><br/>
-        <input type="text" id="lastname"/><br/>
+      <label for="name">Ime:</label><br />
+      <input type="text" id="name" /><br />
 
-        <label for="email">E-naslov:</label><br/>
-        <input type="email" id="email"/><br/>
+      <label for="lastname">Priimek:</label><br />
+      <input type="text" id="lastname" /><br />
 
-        <label for="number">Telefon:</label><br/>
-        <input type="tel" id="number" placeholder="Vnesite kot 030-111-222"/><br/>
+      <label for="email">E-naslov:</label><br />
+      <input type="email" id="email" /><br />
 
-        <label for="address">Naslov:</label><br/>
-        <input type="text" id="address"/><br/>
+      <label for="number">Telefon:</label><br />
+      <input
+        type="tel"
+        id="number"
+        placeholder="Vnesite kot 000-111-222"
+      /><br />
 
+      <label for="address">Naslov:</label><br />
+      <input type="text" id="address" /><br />
 
-        <label for="postcode">Poštna št.:</label><br/>
-        <input type="number" id="postcode"/><br/>
+      <label for="postcode">Poštna št.:</label><br />
+      <input type="number" id="postcode" /><br />
 
+      <label for="city">Kraj:</label><br />
+      <input type="text" id="city" /><br />
 
-        <label for="city">Kraj:</label><br/>
-        <input type="text" id="city"/><br/>
+      <p>Način plačila</p>
 
+      <input
+        class="clickable"
+        id="creditcard"
+        type="radio"
+        name="paymentoption"
+        value="creditcard"
+      />
+      <label class="clickable" for="creditcard">Kreditna kartica</label>
 
-        <p>Način plačila</p>
+      <input
+        class="clickable"
+        id="paypal"
+        type="radio"
+        name="paymentoption"
+        value="paypal"
+      />
+      <label class="clickable" for="paypal">Paypal</label><br />
 
-        <input class="clickable" id="creditcard" type="radio" name="paymentoption" value="creditcard"/>
-        <label class="clickable" for="creditcard">Kreditna kartica</label>
-
-        <input class="clickable" id="paypal" type="radio" name="paymentoption" value="paypal"/>
-        <label class="clickable" for="paypal">Paypal</label><br/>
-
-        <input class="clickable" type="submit" id="submit" value="NAROČI"/>
-
+      <input class="clickable" type="submit" id="submit" value="NAROČI" />
     </form>
 
     <script src="sharpener.js"></script>
-
-</body>
+  </body>
 </html>

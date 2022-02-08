@@ -19,8 +19,8 @@ document.addEventListener("scroll", () => {
 });
 
 let scrollBtn = document.getElementById("scroll-btn");
-// When down-arrow button is clicked scroll
-// to the beginning of next section
+// When down-arrow button is clicked -
+// scroll to the beginning of next section
 scrollBtn.addEventListener("click", () => {
   window.scrollTo({
     top: video.clientHeight,
