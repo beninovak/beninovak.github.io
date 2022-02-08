@@ -29,6 +29,11 @@
 
 .menu .section .menu-item {
   margin-bottom: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .menu .section .menu-item h3 {

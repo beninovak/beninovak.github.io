@@ -17,16 +17,12 @@ STYLES UP TO 600px SCREEN WIDTH
 ---------------------------------
 -------------------------------*/
 #video-block {
-  display: -ms-grid;
-  display: grid;
   position: relative;
-  scroll-behavior: auto;
 }
 
 #video-block video {
   width: 100%;
-  scroll-behavior: auto;
-  overflow: clip;
+  display: block;
 }
 
 #video-block .headline {
