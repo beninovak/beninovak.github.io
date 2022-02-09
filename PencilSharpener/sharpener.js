@@ -5,14 +5,14 @@ video.play();
 
 // IMPORTANT
 document.addEventListener("scroll", () => {
-  // If you haven't scrolled past video
-  // and you refresh, the page view will snap back to top
-  if (document.documentElement.scrollTop <= video.clientHeight) {
+  // If you haven't scrolled past the halfway point of
+  // video and you refresh, the page view will snap back to top
+  if (document.documentElement.scrollTop <= video.clientHeight / 2) {
     history.scrollRestoration = "manual";
   }
 
-  // If you have scrolled past video
-  // you will stay at the same spot on page refresh
+  // If you have scrolled past the halfway point of
+  // video you will stay at the same spot on page refresh
   else {
     history.scrollRestoration = "auto";
   }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="sharpener.css" />
+    <link rel="stylesheet" href="sharpener-min.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
   <body>
     <div id="video-block">
       <video type="video/mp4" autoplay muted loop id="vid">
-        <!--<source src="../Assets/sharpener-vid.mp4" type="video/mp4"/>-->
+        <!-- <source src="../Assets/sharpener-vid.mp4" type="video/mp4"/> -->
         <!--Upper src won't work on github pages...it must have the below link -->
         <!--When using on local use above link-->
         <source
@@ -63,7 +63,7 @@
       <h1>Samo poglejte si te sumljivo zadovoljne stranke!</h1>
 
       <div class="customer">
-        <img src="Assets/babi-se-strinja.png" />
+        <img src="Assets/babi-se-strinja.png" loading="lazy" />
 
         <div class="customer-name">Marija - Hrastje pri Grosupljem</div>
 
@@ -73,7 +73,7 @@
       </div>
 
       <div class="customer">
-        <img src="Assets/vesel-dedi.png" />
+        <img src="Assets/vesel-dedi.png" loading="lazy" />
 
         <div class="customer-name">Stane - Mlaka pri Kranju</div>
 
@@ -85,7 +85,7 @@
       </div>
 
       <div class="customer">
-        <img src="Assets/rich-dedi.png" />
+        <img src="Assets/rich-dedi.png" loading="lazy" />
 
         <div class="customer-name">Borut - Celje</div>
 
@@ -96,7 +96,7 @@
       </div>
 
       <div class="customer">
-        <img src="Assets/vesel-dedi2.png" />
+        <img src="Assets/vesel-dedi2.png" loading="lazy" />
 
         <div class="customer-name">Tone - Izola</div>
 
@@ -111,7 +111,7 @@
       <p id="first">Pohitite dokler je še v zalogi!</p>
       <p id="second">
         Ob takojšnem naročilu prejmete 20% popusta in <b>ZASTONJ</b> svinčnik!!!
-        <img src="Assets/pencil.png" />
+        <img src="Assets/pencil.png" loading="lazy" />
       </p>
       <p id="third">TOREJ KAJ ŠE ČAKATE?</p>
       <p id="fourth">
@@ -176,6 +176,6 @@
       <input class="clickable" type="submit" id="submit" value="NAROČI" />
     </form>
 
-    <script src="sharpener.js"></script>
+    <script src="sharpener.js" type="module" defer></script>
   </body>
 </html>
