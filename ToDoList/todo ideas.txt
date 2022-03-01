@@ -1,0 +1,15 @@
+---add date when to do was added---
+---important marks---
+---prevent empty input---
+---add to list with enter---
+---delete functionality---
+---checkboxes to mark completion---
+---prevent duplicate entries---
+---warning prompt before deleting important to-do---
+---maybe dedicated info button?---
+
+---save to-do's in local storage--->keep data of todo(marked as done/important/date of creation)---
+prevent adding empty space
+delete all buttons/delete selected
+move items around list---drag events
+groups of todos for different projects

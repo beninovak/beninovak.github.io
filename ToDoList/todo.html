@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="todo.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>To do list</title>
+  </head>
+  <body>
+    <h1>TO DO LIST</h1>
+
+    <div id="icon-legend">
+      <div>
+        <img src="info-icon.svg" alt="info-icon">
+        Click to show details about the to-do
+      </div>
+      <div>
+        <img src="important-icon.svg" alt="important-icon">
+        Click to mark to-do as important
+      </div>
+      <div>
+        <img src="trash-icon.svg" alt="delete-icon">
+        Double click to delete to-do
+      </div>      
+    </div>
+
+    <div id="selection-menu">
+      <input onclick="selectAll()" id="select-all" type="checkbox"/>
+      <label for="select-all">Select all</label>
+      <input onclick="deleteSelected()" id="delete-button" type="button" value="Delete selected">      
+    </div>
+
+    <ul id="list"></ul>
+
+    <div id="controls">
+      <input id="item-input" type="text" placeholder="Type your to-do here" />
+      <button onclick="addItemToList()">
+        <img src="plus-icon.svg" alt="Add item to list" />
+      </button>
+    </div>
+
+    <div id="tooltip"></div>
+
+    <div id="item-info"></div>
+
+    <div id="warning-background">
+      <div id="warning-alert">
+        <h3>test123</h3>
+        <p>
+          You already have a to-do like that.
+          Are you sure you want to add another one?
+        </p>
+
+        <div>
+          <button id="no-button">No</button>
+          <button id="yes-button">Yes</button>
+        </div>
+      </div>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
