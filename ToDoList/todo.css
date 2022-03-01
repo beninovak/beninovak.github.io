@@ -1,0 +1,302 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media(min-width: 1000px) {
+  body {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+#icon-legend div {
+  display: flex;
+  padding-block: 5px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#icon-legend img {
+  height: 25px;
+  margin-right: 10px;
+}
+
+#selection-menu {
+  margin-block: 1.5rem;
+  display: flex; 
+  height: 40px;
+  line-height: 40px;
+  padding-left: 0.5rem;
+}
+
+#selection-menu input {
+  display: block;
+  width: 25px;
+  height: 100%;
+  padding-inline: 0.25rem;
+  margin: 0 0.5rem 0 0;
+}
+
+#selection-menu input[type="button"] {
+  width: 150px;
+  margin-left: auto;
+  margin-left: auto;
+  background: #e33939;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0px 3px 5px #333;
+  transition-duration: 0.3s;
+  transition-property: color;
+}
+
+#selection-menu input[type="button"]:hover {
+  color: white;
+}
+
+#selection-menu input[type="button"]:active {
+  transform: translateY(3px);
+  box-shadow: 0px 6px 5px #333;
+}
+
+#selection-menu label {
+  font-weight: bold;
+}
+
+#tooltip {
+  visibility: hidden;
+  position: fixed;
+  font-size: 14px;
+  width: 150px;
+  line-height: 25px;
+  background: #f02e51;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding-inline: 10px;
+  font-weight: bold;
+}
+
+#item-info {
+  visibility: hidden;
+  position: fixed;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 3px;
+  background: #ffd1a1;
+  border: 1px solid black;
+  padding-inline: 10px;
+  font-weight: bold;
+  white-space: pre-line;
+}
+
+#warning-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: rgba(0,0,0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+#warning-alert {
+  user-select: none;
+  width: calc(350px - 2rem);
+  height: fit-content;
+  background: #f99d32;
+  border-radius: 10px;
+  padding: 1rem;
+  position: fixed;
+  display: block;
+  border: 3px solid white;
+  outline: 3px solid black;
+
+  /* Perfect centering */
+  margin-inline: auto;
+  margin-block: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+#warning-alert h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+#warning-alert p {
+  font-size: 1.1rem;
+}
+
+#warning-alert div {text-align: right}
+
+#warning-alert button {
+  padding: 0;
+  width: 80px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-inline: 0.3rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  transition-duration: 0.2s;
+  transition-property: box-shadow;
+}
+
+#warning-alert button:hover {
+  filter: brightness(1.2);
+  box-shadow: 2px 4px 6px black;
+}
+
+#warning-alert button:active {
+  transform: translateY(3px);
+}
+
+#warning-alert #yes-button {
+  background-color: #de356d;
+}
+
+#list {
+  position: relative;
+  padding: 0;
+  border: 3px solid black;
+  list-style-position: inside;
+  min-height: 200px;
+  list-style-type: none;
+}
+
+#list li {
+  /* 48px so that with the border one item is 50px tall */
+  height: 48px;
+  line-height: 48px;
+  background: #73e7ff;
+  display: flex;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  border-bottom: 2px solid black;
+}
+
+#list li:nth-of-type(2n) {
+  background: #28dbff;
+}
+
+#list li input {
+  margin: 0;
+  width: 25px;
+  height: 100%;
+  display: block;
+}
+
+#list li .text {
+    flex-basis: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    padding-left: 1rem;
+}
+
+#list li .marked-as-complete {
+  text-decoration: line-through;
+}
+
+#list li.important {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: #006aed;
+}
+
+#list li img {
+  height: 25px;
+  max-height: 100%;
+  align-self: center;
+  margin-inline: 0.25rem;
+  cursor: pointer;
+  user-select: none;
+
+  /* 12.5px because the parent is 50px high, from that 
+     you subtract 25px for the height, the remaining
+     25px you split between top and bottom padding
+     in order to center the image vertically*/
+  padding: 12.5px 0;
+}
+
+#list li img:hover {
+  /* Changes icon color from black to white*/
+  filter: invert(100%);
+  transition-duration: 0.4s;
+}
+
+/* Used to turn the important-icon a 
+   specific shade of yellow when it is clicked.
+   The below link generates a filter for a specific color
+   ---https://codepen.io/sosuke/pen/Pjoqqp---*/
+.important-icon-selected {
+  filter : invert(83%) sepia(89%) saturate(434%) hue-rotate(357deg) brightness(106%) contrast(102%);
+}
+
+#controls {
+  width: 100%;
+  padding: 0;
+  height: 50px;
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+
+#controls input {
+  border: none;
+  padding: 0;
+  padding-left: 0.5rem;
+  height: 100%;
+  flex: 4;
+  font-size: 1rem;
+}
+
+#controls input::placeholder {
+  font-size: 1rem;
+  user-select: none;
+}
+
+/* Used when user tries to add an empty to-do */
+#controls input.empty::placeholder {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+#controls input:focus {
+  outline: none;
+}
+
+#controls button {
+  height: 100%;
+  padding: 0;
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  line-height: 0;
+}
+
+#controls button:hover {
+  background: #999;
+  transition-duration: 0.4s;
+}
+
+#controls button img {
+  height: 25px;
+  max-height: 100%;
+}
