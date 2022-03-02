@@ -420,9 +420,19 @@ async function deleteSelected() {
 
   // Gets list of all checkboxes
   let allCheckboxes = document.querySelectorAll("#list input");
+  let anyCheckboxChecked = false;
+  
+  allCheckboxes.forEach(item => {
+    if(item.checked) {
+      anyCheckboxChecked = true;
+    }
+  });
+
+  if(!anyCheckboxChecked) {
+    return;
+  }
 
   warningAlert.style.display = "block";
-
   let deleteSelected = await handleWarning("deleteSelected");
 
   if(!deleteSelected) {
