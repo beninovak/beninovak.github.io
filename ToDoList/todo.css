@@ -14,6 +14,14 @@ body {
   }
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 #icon-legend div {
   display: flex;
   padding-block: 5px;
@@ -45,7 +53,7 @@ body {
   margin: 0 0.5rem 0 0;
 }
 
-#selection-menu input[type="button"] {
+#selection-menu #delete-button {
   width: 150px;
   margin-left: auto;
   margin-left: auto;
@@ -60,13 +68,27 @@ body {
   transition-property: color;
 }
 
-#selection-menu input[type="button"]:hover {
+#selection-menu #delete-button:hover {
   color: white;
 }
 
-#selection-menu input[type="button"]:active {
+#selection-menu #delete-button:active {
   transform: translateY(3px);
   box-shadow: 0px 6px 5px #333;
+}
+
+#selection-menu #delete-button.disabled {
+  background: #7c7c7c;
+  box-shadow: none;
+}
+
+#selection-menu #delete-button.disabled:hover {
+  color: black;
+}
+
+#selection-menu #delete-button.disabled:active {
+  transform: translateY(0px);
+  box-shadow: unset;
 }
 
 #selection-menu label {
@@ -104,21 +126,21 @@ body {
   top: 0;
   left: 0;
   z-index: 10000;
-  background-color: rgba(0,0,0, 0.5);
+  background-color: rgba(0,0,0, 0.75);
   width: 100%;
   height: 100%;
-  display: none;
 }
 
 #warning-alert {
   user-select: none;
-  width: calc(350px - 2rem);
+  min-width: calc(350px - 2rem);
+  max-width: 400px;
   height: fit-content;
   background: #f99d32;
   border-radius: 10px;
   padding: 1rem;
+  display: inherit;
   position: fixed;
-  display: block;
   border: 3px solid white;
   outline: 3px solid black;
 
@@ -201,7 +223,7 @@ body {
 }
 
 #list li .text {
-    flex-basis: 50%;
+    flex-basis: 40%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

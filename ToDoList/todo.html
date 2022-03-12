@@ -28,26 +28,28 @@
       </div>      
     </div>
 
-    <div id="selection-menu">
-      <input onclick="selectAll()" id="select-all" type="checkbox"/>
-      <label for="select-all">Select all</label>
-      <input onclick="deleteSelected()" id="delete-button" type="button" value="Delete selected">      
+    <div class="to-do-group">
+      <div id="selection-menu">
+        <input onclick="selectAll()" id="select-all" type="checkbox"/>
+        <label for="select-all">Select all</label>
+        <input aria-disabled="true" class="disabled" id="delete-button" type="button" value="Delete selected">      
+      </div>
+  
+      <ul id="list"></ul>
+  
+      <div id="controls">
+        <input id="item-input" type="text" placeholder="Type your to-do here" />
+        <button onclick="addItemToList()">
+          <img src="plus-icon.svg" alt="Add item to list" />
+        </button>
+      </div>
+  
+      <div id="tooltip"></div>
     </div>
-
-    <ul id="list"></ul>
-
-    <div id="controls">
-      <input id="item-input" type="text" placeholder="Type your to-do here" />
-      <button onclick="addItemToList()">
-        <img src="plus-icon.svg" alt="Add item to list" />
-      </button>
-    </div>
-
-    <div id="tooltip"></div>
 
     <div id="item-info"></div>
 
-    <div id="warning-background">
+    <div id="warning-background" class="hide">
       <div id="warning-alert">
         <h3>test123</h3>
         <p>
@@ -55,9 +57,13 @@
           Are you sure you want to add another one?
         </p>
 
-        <div>
+        <div class="yes-no-group">
           <button id="no-button">No</button>
-          <button id="yes-button">Yes</button>
+          <button id="yes-button">Yes</button>          
+        </div>
+
+        <div class="ok-group hide">
+          <button id="ok-button">OK</button>
         </div>
       </div>
     </div>

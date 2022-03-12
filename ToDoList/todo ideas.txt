@@ -7,9 +7,10 @@
 ---prevent duplicate entries---
 ---warning prompt before deleting important to-do---
 ---maybe dedicated info button?---
-
+---delete all buttons/delete selected---
 ---save to-do's in local storage--->keep data of todo(marked as done/important/date of creation)---
-prevent adding empty space
-delete all buttons/delete selected
+---prevent adding empty space---
+---"delete selected" btn should check if no checkbox is checked---
+
 move items around list---drag events
-groups of todos for different projects
+

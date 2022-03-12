@@ -12,7 +12,7 @@ const unmarkImportantTooltipText = `Marked as important.
       Click again to remove mark.`;
 
 const selectAllBtn = document.getElementById("select-all");
-const deleteSelectedBtn = document.getElementById("delete-selected");
+const deleteSelectedBtn = document.getElementById("delete-button");
 
 // Used in handleWarning when displaying warning popup
 const warningAlert = document.getElementById("warning-background");
@@ -28,26 +28,15 @@ const toDoList = document.getElementById("list");
 // Used in fetchChoice() and changed when warning popup buttons are pressed
 let userChoice = null;
 
-const noButton = document.getElementById("no-button");
-const yesButton = document.getElementById("yes-button");
-
-// Updates userChoice when the choice buttons are clicked
-noButton.addEventListener("click", () => userChoice = false);
-yesButton.addEventListener("click", () => userChoice = true);
-
 // Will contain each to-do's text to check for duplicates
 let allTodos = [];
 
-// Pressing enter inside input will call addItemToList()
-itemInput.addEventListener("keyup", (e) => {
-  if (e.key === "Enter") {
-    addItemToList();
-  }
-});
+const noButton = document.getElementById("no-button");
+const yesButton = document.getElementById("yes-button");
+const OKButton = document.getElementById("ok-button");
 
 // If local storage already has some to-do's, add them to the local array
-if(localStorage.getItem("todos")) {
-
+if(JSON.parse(localStorage.getItem("todos")).length !== 0) {
   // Items are stored in the same variable-
   // in local storage, separated by commas. This-
   // makes an array of individual to-do's from that variable.
@@ -57,7 +46,29 @@ if(localStorage.getItem("todos")) {
   savedTodos.forEach((item) => {
     createItemToAdd(item);
   });
+
+  deleteSelectedBtn.classList.remove("disabled");
+  deleteSelectedBtn.ariaDisabled = false;
 }
+
+// Updates userChoice when the choice buttons are clicked
+noButton.addEventListener("click", () => userChoice = false);
+yesButton.addEventListener("click", () => userChoice = true);
+OKButton.addEventListener("click", () => userChoice = "OK");
+deleteSelectedBtn.addEventListener("click", (e) => {
+  // For some reason reading the ariaDisabled attribute returns a string.
+  // If that string is "false", meaning the button is not disabled, run the function.
+  if((e.target.ariaDisabled) === "false") {
+    deleteSelected();
+  }
+});
+
+// Pressing enter inside input will call addItemToList()
+itemInput.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    addItemToList();
+  }
+});
 
 function createItemToAdd(itemToAdd) {
   // Creates the to-do item
@@ -163,6 +174,9 @@ function createItemToAdd(itemToAdd) {
     completed: itemToAdd.completed
   });
 
+  deleteSelectedBtn.classList.remove("disabled");
+  deleteSelectedBtn.ariaDisabled = false;
+
   // Add the to-do item to the list
   toDoList.appendChild(itemToBeAdded);
 
@@ -172,15 +186,18 @@ function createItemToAdd(itemToAdd) {
 
 async function addItemToList() {
 
-  let itemInputText = itemInput.value;
+  // The trim() method removes whitespaces either side of the string
+  let itemInputText = itemInput.value.trim();
   let isDuplicate = false;
 
   // Creation date of to-do item will be part of the item's data.
   // 'toLocaleString()' gives me DD/MM/YYYY HH:MM:SS.
-  let dateOfCreation = new Date().toLocaleString();
+  let dateOfCreation = new Date().toLocaleString("sl-SI", {day: 'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'});
 
-  // If input is empty, change it to show that that's invalid and do nothing
-  if (itemInputText == "") {
+  // If input is empty, change it to show that that's invalid and do nothing.
+  // If the input text's length is 0 (because of the trim() method, do the same).
+  if ((itemInputText === "") || (itemInputText.length === 0)) {
+    itemInput.value = "";
     itemInput.placeholder = "You cannot add an empty to-do";
     itemInput.classList.add("empty");
     itemInput.style.backgroundColor = "#f02e51";
@@ -198,7 +215,7 @@ async function addItemToList() {
   if(isDuplicate) {
 
     // Display warning popup
-    warningAlert.style.display = "block";
+    warningAlert.classList.remove("hide")
 
     // Store user's decision about creating-
     // a duplicate with handleWarning(), which-
@@ -209,13 +226,13 @@ async function addItemToList() {
     // warning popup, clear the input, and leave the function.
     // If 'true' the function proceeds as normal and adds the duplicate.
     if(!createDuplicate) {
-      warningAlert.style.display = "none";
+      warningAlert.classList.add("hide");
       itemInput.value = "";
       return;
     }
 
     // Hide warning popup
-    warningAlert.style.display = "none";
+    warningAlert.classList.add("hide");
   }
 
   createItemToAdd({
@@ -244,7 +261,7 @@ async function deleteItem() {
   if(listItem.classList.contains("important")) {
 
     // Display popup
-    warningAlert.style.display = "block";
+    warningAlert.classList.remove("hide");
 
     // Store user's decision about deleting an-
     // important to-do with handleWarning(), which-
@@ -255,12 +272,12 @@ async function deleteItem() {
     // to-do, hide warning popup and leave the function.
     // If 'true' the function proceeds as normal and deletes the to-do.
     if(!deleteImportant) {
-      warningAlert.style.display = "none";
+      warningAlert.classList.add("hide");
       return;
     }
 
     // Hide warning popup
-    warningAlert.style.display = "none";
+    warningAlert.classList.add("hide");
   }
 
   // Cycles through the to-do items and adjusts their id's.
@@ -272,6 +289,11 @@ async function deleteItem() {
 
   // Adjust counter after deletion
   itemCounter--;
+
+  if(itemCounter === 0) {
+    deleteSelectedBtn.classList.add("disabled");
+    deleteSelectedBtn.ariaDisabled = true;
+  }
 
   allTodos.splice(listItemId, 1);
 
@@ -327,7 +349,17 @@ function displayInfo(e, content, date) {
   itemInfo.style.right = window.innerWidth - e.clientX + "px";
 }
 
-function handleWarning(type) {
+function handleWarning(type, choice) {
+
+  if(choice === "confirm") {
+    document.querySelector("#warning-alert .yes-no-group").classList.add("hide");
+    document.querySelector("#warning-alert .ok-group").classList.add("show");
+  }
+
+  else {
+    document.querySelector("#warning-alert .yes-no-group").classList.remove("hide");
+    document.querySelector("#warning-alert .ok-group").classList.remove("show");
+  }
 
   // Changes warning-alert title and text-
   // to appropriately convey the warning to user
@@ -342,6 +374,12 @@ function handleWarning(type) {
       warningHeader.innerHTML = "Deleting important to-do!"
       warningText.innerHTML = `You are trying to delete a to-do
       which is marked as important. Are you sure you want to do that?`
+      break;
+
+    case "deleteSelectedNoneSelected":
+      warningHeader.innerHTML = "No to-do's selected!";
+      warningText.innerHTML = `Please select which to-do's you want to
+      delete.`;
       break;
 
     case "deleteSelected":
@@ -384,6 +422,11 @@ function fetchChoice() {
     userChoice = null;
     return false;
   }
+
+  else if(userChoice === "OK") {
+    userChoice = null;
+    return "OK";
+  }
 }
 
 // Selects all the to-do's
@@ -420,29 +463,42 @@ async function deleteSelected() {
 
   // Gets list of all checkboxes
   let allCheckboxes = document.querySelectorAll("#list input");
-  let anyCheckboxChecked = false;
-  
+
+  warningAlert.classList.remove("hide");
+
+  let counter = 0;
+
+  let anyTodoChecked = false;
+
   allCheckboxes.forEach(item => {
     if(item.checked) {
-      anyCheckboxChecked = true;
+      anyTodoChecked = true;
+      counter++;
     }
   });
 
-  if(!anyCheckboxChecked) {
-    return;
+  if(!anyTodoChecked) {
+    await handleWarning("deleteSelectedNoneSelected", "confirm");
   }
 
-  warningAlert.style.display = "block";
-  let deleteSelected = await handleWarning("deleteSelected");
+  else {
+    let deleteSelected = await handleWarning("deleteSelected");
 
-  if(!deleteSelected) {
-    warningAlert.style.display = "none";
-    return;
+    if(!deleteSelected) {
+      warningAlert.classList.add("hide");
+      return;
+    }
+  }
+
+  itemCounter -= counter;
+
+  if(itemCounter === 0) {
+    deleteSelectedBtn.classList.add("disabled");
+    deleteSelectedBtn.ariaDisabled = true;
   }
 
   // Cycles through all checkboxes
   allCheckboxes.forEach(item => {
-
     // If the current checkbox is selected, delete it
     if(item.checked) {
       
@@ -469,7 +525,7 @@ async function deleteSelected() {
   }
   
   // Hide warning
-  warningAlert.style.display = "none";
+  warningAlert.classList.add("hide");
 }
 
 window.addEventListener("beforeunload", () => {
