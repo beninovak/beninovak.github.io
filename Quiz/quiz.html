@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <title>Quiz</title>
+</head>
+<body>
+
+    <div class="form-container container">
+        <form id="quiz-options">
+            <div class="option">
+                <label for="question-amount">Choose amount of questions (max. 50)</label>
+                <input name="question-amount" id="question-amount" type="number" value="10" min="10" max="20">
+            </div>
+        
+            <div class="option">
+                <label for="category-select">Category</label>
+                <select name="category" name="category" id="category-select">
+                    <option selected value="All">All</option>
+                </select>
+            </div>
+
+            <div class="option">
+                <label for="difficulty-select">Difficulty</label>
+                <select name="difficulty" name="difficulty" id="difficulty-select">
+                    <option value="easy">Easy</option>
+                    <option selected value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div id="quiz" class="container">
+        <h1 id="question"></h1>
+
+        <div class="form-group hide">
+            <input id="answer1" type="radio" name="quiz"/>
+            <label for="answer1" class="answer"></label>
+        </div>
+
+        <div class="form-group hide">
+            <input id="answer2" type="radio" name="quiz"/>
+            <label for="answer2" class="answer"></label>
+        </div>
+
+        <div class="form-group hide">
+            <input id="answer3" type="radio" name="quiz"/>
+            <label for="answer3" class="answer"></label>
+        </div>
+
+        <div class="form-group hide">
+            <input id="answer4" type="radio" name="quiz"/>
+            <label for="answer4" class="answer"></label>
+        </div>
+
+        <div class="hide" id="warning">You must select an answer before proceeding to the next question!</div>
+
+        <button class="controls" id="start-btn">START QUIZ!</button>
+        <button class="controls hide" id="next-btn">NEXT</button>
+        <button class="controls hide" id="submit-btn">SUBMIT</button>
+        <button class="controls hide" id="check-answers-btn">RESULTS</button>
+        
+    </div>
+
+    <script type="module" src="submitQuiz.js"></script>
+    <script src="quiz.js"></script>
+    
+</body>
+</html>
