@@ -13,6 +13,23 @@ html {
     box-sizing: inherit;
 }
 
+body h1 {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+body a {
+    width: 100%;
+    text-align: center;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: #b80bb8;
+    word-break: break-all;
+}
+
 .hide {
     display: none !important;
 }
