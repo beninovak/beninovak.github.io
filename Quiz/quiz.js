@@ -73,7 +73,7 @@ async function startQuiz() {
 
 async function getShuffledQuestions() {
 
-  let questionsURL = await import("./submitQuiz")
+  let questionsURL = await import("./submitQuiz.js")
       .then(({default: getChoiceData}) => getChoiceData());
 
   let responseCode;
