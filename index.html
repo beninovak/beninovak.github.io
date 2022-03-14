@@ -4,15 +4,111 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" type="text/css">
+    <link rel="icon" href="Assets/me.png">
+    <title>Home page</title>
 </head>
 <body>
 
-    <a href="Restaurant/restaurant.html">Restaurant example page</a><br/>
-    <a href="PencilSharpener/sharpener.html">Product landing page example</a><br/>
-    <a href="ToDoList/todo.html">To-do list example</a><br/>
-    <a href="Quiz/quiz.html">Quiz example WIP</a>
+    <header>
+        <div class="item">
+            <img src="Assets/me.png" alt="me">
+        </div>
+        <div class="item">
+            <a href="#projects" class="link" id="projects-link">Projects</a>
+        </div>
+        <div class="item">
+            <a href="#contact" class="link" id="contact-link">Contact</a>
+        </div>
+    </header>
+    
+    <section class="about">
 
+        <a href="#contact" class="link please-hire">
+            Please hire me
+        </a>
+
+        <div class="description">
+            Below are some of my recent projects, some focusing
+            mostly on CSS and design, and others more on 
+            javascript and logic.
+         </div>
+
+         <div class="description">
+            Some of these might still be a WIP.
+         </div>
+
+         <div class="description">
+            I don't have any professional experience but I'm
+            always eager to learn new skills.
+         </div>
+
+         <div class="description">
+            Currently, I'm more comfortable
+            with front-end stuff, but I'm open to back-end work
+            as well, preferably with a mentor at first.
+         </div>
+
+         <div class="link scroll-to-projects">
+             <a class="link" href="#projects"><img src="Assets/arrow.svg" alt="scroll-to-projects"></a>
+         </div>
+
+    </section>
+
+    <section id="projects" class="projects-section">
+
+        <h1>Recent projects</h1>
+
+        <article class="project">
+            <a href="https://beninovak.github.io/Restaurant/restaurant.html"><img class="page-ss" src="Assets/restaurant.png" alt="restaurant page"></a>
+            <h3 class="title">Restaurant page example</h3>
+            <div class="project-description">
+                This was my first project in some time, so I mainly used
+                it to "de-rust" my css knowledge.
+            </div>
+            <a class="link site-link" href="https://beninovak.github.io/Restaurant/restaurant.html">View page</a>
+        </article> 
+
+        <article class="project">
+            <a href="https://beninovak.github.io/ToDoList/todo.html"><img class="page-ss" src="Assets/todo.png" alt="to-do list page"></a>
+            <h3 class="title">To-do list page example</h3>
+            <div class="project-description">
+                I wanted to try a small project in javascript, because I hadn't done anything with it in some time.
+                It definitely tested me.
+            </div>
+            <a class="link site-link" href="https://beninovak.github.io/ToDoList/todo.html">View page</a>
+        </article>
+
+        <article class="project">            
+            <a href="https://beninovak.github.io/PencilSharpener/sharpener.html"><img class="page-ss" src="Assets/sharpener.png" alt="product landing page"></a>
+            <h3 class="title">Product landing page example</h3>
+            <div class="project-description">
+                I created a landing page for a fictional product, 
+                a <i>pencil sharpener</i>! I had quite a bit of fun with
+                this one as I found the whole thing funny.
+            </div>
+            <a class="link site-link" href="https://beninovak.github.io/PencilSharpener/sharpener.html">View page</a>
+        </article>
+
+        <article class="project">            
+            <a href="https://beninovak.github.io/Quiz/quiz.html"><img class="page-ss" src="Assets/quiz.png" alt="Custom quiz page"></a>
+            <h3 class="title">Custom quiz using API calls</h3>
+            <div class="project-description">
+                Another project that challenged me. I learned alot about asynchronous javascript.
+                It was also the first time I used modules.
+            </div>
+            <a class="link site-link" href="https://beninovak.github.io/Quiz/quiz.html">View page</a>
+        </article>
+    </section>
+
+    <section id="contact">
+        <h1>Contact:</h1>
+        <p id="intro"><b>You can contact me via e-mail or phone.</p></b>
+        <p id="number"><b>Phone:</b> +386 30 247 720</p>
+        <p id="email"><b>E-mail:</b> beni.novak13@gmail.com</p>
+    </section>
 </body>
 </html>
