@@ -15,7 +15,8 @@ const style = `
     outline: 3px solid black; 
     background-color: #c9823a; 
     cursor: pointer;
-    z-index: 1000`;
+    z-index: 1000;
+    box-sizing: content-box;`;
 
 const iconStyle = "width: 35px; height: 45px;"
 

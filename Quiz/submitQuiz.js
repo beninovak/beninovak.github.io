@@ -40,14 +40,18 @@ export default async function getChoiceData() {
         }
     });
 
+    completeURL = `${baseURL}amount=${amount}&type=multiple`;
+
     // Creates appropriate URL
-    if(categoryID === null) {
-        completeURL = `${baseURL}amount=${amount}&difficulty=${difficulty}&type=multiple`;
-        return completeURL;
+    if(categoryID !== null) {
+        completeURL += "&category=" + categoryID;
     }
 
-    completeURL = `${baseURL}amount=${amount}&category=${categoryID}&difficulty=${difficulty}&type=multiple`;
+    if(difficulty !== "all") {
+        completeURL += "&difficulty=" + difficulty;
+    }
 
+    console.log(completeURL);
     // This is used in 'quiz.js'
     return completeURL;
 }

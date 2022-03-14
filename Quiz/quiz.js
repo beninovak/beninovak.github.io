@@ -45,6 +45,7 @@ async function startQuiz() {
 
   shuffledAnswers = [];
   submittedAnswers = [];
+  numberOfCorrectAnswers = 0;
 
   nextBtn.addEventListener("click", loadNextQuestion);
   nextBtn.removeEventListener("click", checkAnswers);
@@ -104,8 +105,6 @@ async function getShuffledQuestions() {
   // independant -> changing one does not change the other.
   shuffledQuestions = [...questions];
   shuffledQuestions = shuffleQuestions(questions);
-  console.log(questions); 
-  console.log(shuffledQuestions);
 
   // Will be used when trying to start the quiz
   return responseCode;
