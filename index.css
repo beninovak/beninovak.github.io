@@ -53,26 +53,12 @@ header .link {
     background-image: url(Assets/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    
-    height: fit-content;
-    padding-block: 40px;
-}
 
-.about .please-hire {
-    display: block;
-    background-color: var(--secondary-color);;
-    margin: 0 auto 40px;
-    padding: 30px 15px;
-    border-radius: 20px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    border: 3px solid white;
-    text-align: center;
-    box-shadow: 3px 4px 5px #fff;
-    transition-property: color;
-    
-    /* minus left padding */
-    width: calc(80% - 30px);
+    box-sizing: border-box;
+
+    /* 100px is the height of the header*/
+    height: calc(100vh - 100px);
+    padding-block: 40px;
 }
 
 .about .description {
@@ -177,6 +163,29 @@ header .link {
     background-color: var(--main-color);
 }
 
+
+#contact:target {
+    animation-name: blink; 
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 3;
+    animation-fill-mode: none;
+}
+
+@keyframes blink {
+    0% {
+        background-color: var(--main-color);
+    }
+
+    50% {
+        background-color: var(--dark-color);
+    }
+
+    100% {
+        background-color: var(--main-color);
+    }
+}
+
 #contact p {font-weight: 500;}
 
 @media(min-width: 600px) {
@@ -190,7 +199,9 @@ header .link {
 
     header .item {padding-inline: 20px;}
 
-    .about .please-hire, .about .description {width: 400px;}
+    .about {height: calc(100vh - 130px);}
+
+    .about .description {width: 400px;}
 
     .about > .description:nth-of-type(odd) {
         margin-left: 20vw;
@@ -234,16 +245,16 @@ header .link {
         width: 110px;
     }
 
-    .about .please-hire {font-size: 1.5rem;}
+    .about {height: calc(100vh - 140px);}
 }
 
 @media(min-width: 1000px) {
     header img {width: 130px;}
+
+    .about {height: calc(100vh - 160px);}
 }
 
 @media(min-width: 1200px) {
-    header {font-size: 1.7rem;}
-
     .projects-section {justify-content: space-around;}
 
     .projects-section h1 {
@@ -264,8 +275,6 @@ header .link {
 }
 
 @media(min-width: 1400px) {
-   header img {width: 150px;}
-
     .project {
         flex-basis: calc(25% - 60px);
     }
