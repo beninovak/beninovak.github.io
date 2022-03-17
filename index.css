@@ -57,7 +57,7 @@ header .link {
     box-sizing: border-box;
 
     /* 100px is the height of the header*/
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
     padding-block: 40px;
 }
 
@@ -199,7 +199,7 @@ header .link {
 
     header .item {padding-inline: 20px;}
 
-    .about {height: calc(100vh - 130px);}
+    .about {min-height: calc(100vh - 130px);}
 
     .about .description {width: 400px;}
 
@@ -245,13 +245,13 @@ header .link {
         width: 110px;
     }
 
-    .about {height: calc(100vh - 140px);}
+    .about {min-height: calc(100vh - 140px);}
 }
 
 @media(min-width: 1000px) {
     header img {width: 130px;}
 
-    .about {height: calc(100vh - 160px);}
+    .about {min-height: calc(100vh - 160px);}
 }
 
 @media(min-width: 1200px) {
