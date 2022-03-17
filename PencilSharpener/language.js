@@ -5,8 +5,7 @@ const lastUsedLanguage = localStorage.getItem("last_used_language");
 
 // Because English is the default language, I check if any other language was last used.
 // This is so that if English was last used, it doesn't go through all the elements and overrides their text with identical text.
-if(lastUsedLanguage !== "EN") {
-
+if(lastUsedLanguage &&  lastUsedLanguage!== "EN") {
     // Selects the option in the select element corresponding to the last used language and translates into it.
     document.querySelector(`option[value='${lastUsedLanguage}']`).selected = true;
     document.querySelector(`option:not([value='${lastUsedLanguage}'])`).selected = false;
