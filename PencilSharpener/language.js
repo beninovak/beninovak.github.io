@@ -71,6 +71,6 @@ async function changeLanguage() {
 }
 
 // Store the last used language in localStorage
-window.addEventListener("beforeunload", () => {
+window.onbeforeunload = () => {
     localStorage.setItem("last_used_language", languageSelect.value);
-});
+};
