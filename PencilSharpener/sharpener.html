@@ -13,7 +13,8 @@
       rel="stylesheet"
     />
 
-    <title>Šilček</title>
+    <title data-key="tab-title">Pencil sharpener</title>
+    <!--The data-key attribute is used for translation purposes-->
   </head>
   <body>
     <div id="video-block">
@@ -28,7 +29,7 @@
       </video>
 
       <div class="headline">
-        <p>Šilček, kot ga še nikoli niste videli</p>
+        <p data-key="headline-quote">New in sharpener technology</p>
       </div>
 
       <div class="clickable" id="scroll-btn" onclick="scroll()">
@@ -38,122 +39,117 @@
 
     <div class="images">
       <div id="first" class="img-description">
-        <h1>Popolnoma nov dezajn</h1>
-        <div class="img-caption">Nemogoča lepota</div>
+        <h1 data-key="img-title">Brand new design</h1>
+        <div data-key="img-caption" class="img-caption">Impossibly beautiful</div>
       </div>
 
       <div id="second" class="img-description">
-        <h1>Izjemna praktičnost</h1>
-        <div class="img-caption">Sede v žep</div>
+        <h1 data-key="img-title">Incredibly practical</h1>
+        <div data-key="img-caption" class="img-caption">Sits in your pocket</div>
       </div>
 
       <div id="third" class="img-description">
-        <h1>Neprekosljiva eleganca</h1>
-        <div class="img-caption">Lahko stoji na glavi</div>
+        <h1 data-key="img-title">Unmatched elegance</h1>
+        <div data-key="img-caption" class="img-caption">Can stand on it's head</div>
       </div>
 
       <div id="fourth" class="img-description">
-        <h1>Osupljiv oprijem</h1>
-        <div class="img-caption">Kva ga prime</div>
+        <h1 data-key="img-title">Stunning grip</h1>
+        <div data-key="img-caption" class="img-caption">So grippy!</div>
       </div>
     </div>
 
     <div class="customer-reviews">
-      <h1>Nam ne verjamete?</h1>
-      <h1>Samo poglejte si te sumljivo zadovoljne stranke!</h1>
+      <h1 data-key="customers-title">Don't believe us?</h1>
+      <h1 data-key="customers-subtitle">Just look at these suspiciously satisfied customers!</h1>
 
       <div class="customer">
         <img src="Assets/babi-se-strinja.png" loading="lazy" />
 
-        <div class="customer-name">Marija - Hrastje pri Grosupljem</div>
+        <div data-key="customer-name" class="customer-name">Marie - Stoke-on-Trent</div>
 
-        <div class="caption">
-          "Resnično neverjetno, nikoli še nisem tako hitro ošilila svinčnika!"
+        <div class="caption" data-key="customer-review">
+          "Truly incredible, I've never sharpened a pencil that quickly!"
         </div>
       </div>
 
       <div class="customer">
         <img src="Assets/vesel-dedi.png" loading="lazy" />
 
-        <div class="customer-name">Stane - Mlaka pri Kranju</div>
+        <div data-key="customer-name" class="customer-name">Steve - Brighton</div>
 
-        <div class="caption">
-          "Ko mi je vnuk prvič povedal za ta šilček mu nisem verjel. Po le nekaj
-          minutah pa sem razumel njegovo osuplost. Vedel sem, da bo ta izum
-          spremenil svet!"
+        <div class="caption" data-key="customer-review">
+          "When my grandson first told me about this pencil sharpener I didn't 
+          believe him. I soon understood his amazement. I knew this invention 
+          would change the world!"
         </div>
       </div>
 
       <div class="customer">
         <img src="Assets/rich-dedi.png" loading="lazy" />
 
-        <div class="customer-name">Borut - Celje</div>
+        <div data-key="customer-name" class="customer-name">Boris - Liverpool</div>
 
-        <div class="caption">
-          "Gotovo smo že vsi slišali starodavni kitajski pregovor - 'Čas je
-          denar'. S tem šilčkom mi ga preostane ogromno!"
+        <div class="caption" data-key="customer-review">
+          "Everyone knows the old Chinese proverb - 'Time is money'. 
+          This pencil sharpener saves a lot of it!"
         </div>
       </div>
 
       <div class="customer">
         <img src="Assets/vesel-dedi2.png" loading="lazy" />
 
-        <div class="customer-name">Tone - Izola</div>
+        <div data-key="customer-name" class="customer-name">Tony - Oxford</div>
 
-        <div class="caption">
-          "V Jugoslaviji smo v šoli o takih izumih lahko le fantazirali.
-          Neverjetno!"
+        <div class="caption" data-key="customer-review">
+          "In schools back in the day, we could've only dreamt of this. Incredible!"
         </div>
       </div>
     </div>
 
     <div class="discount-block">
-      <p id="first">Pohitite dokler je še v zalogi!</p>
-      <p id="second">
-        Ob takojšnem naročilu prejmete 20% popusta in <b>ZASTONJ</b> svinčnik!!!
+      <p data-key="discount-enticement" id="first">Hurry while it's still in stock!</p>
+      <p data-key="discount-enticement" id="second">
+        Order now to get a 20% discount and a <b>FREE</b> pencil!!!
         <img src="Assets/pencil.png" loading="lazy" />
       </p>
-      <p id="third">TOREJ KAJ ŠE ČAKATE?</p>
-      <p id="fourth">
-        Lahko nas pokličete na <span>061-825-333</span>, pišete na
-        <span>silcekprodaja@gmail.com</span>
+      <p data-key="discount-enticement" id="third">SO WHAT ARE YOU WAITING FOR?</p>
+      <p data-key="discount-contact" id="fourth">
+        You can reach us on <span>061-825-333</span>, 
+        or write to us at <span>sharpenersales@gmail.com</span>
       </p>
 
-      <p id="fifth">
-        Ali pa naročite samo z enim klikom kar tukaj!
-        <button class="clickable" onclick="displayOrderBlock()">
-          NAROČITE
+      <div id="fifth">
+        <div data-key="discount-order" class="discount-order">Or order here with just one click!</div>
+        <button data-key="order-btn" class="clickable" onclick="displayOrderBlock()">
+          ORDER
         </button>
-      </p>
+      </div>
     </div>
 
     <form action="#" id="order-form">
-      <label for="name">Ime:</label><br />
+      <label data-key="order-form-label" for="name">Name:</label><br />
       <input type="text" id="name" /><br />
 
-      <label for="lastname">Priimek:</label><br />
+      <label data-key="order-form-label" for="lastname">Last name:</label><br />
       <input type="text" id="lastname" /><br />
 
-      <label for="email">E-naslov:</label><br />
+      <label data-key="order-form-label" for="email">e-mail:</label><br />
       <input type="email" id="email" /><br />
 
-      <label for="number">Telefon:</label><br />
-      <input
-        type="tel"
-        id="number"
-        placeholder="Vnesite kot 000-111-222"
-      /><br />
+      <label data-key="order-form-label" for="number">Phone number:</label><br />
+      <input type="tel" id="number" placeholder="Input as 000-111-222"/><br />
 
-      <label for="address">Naslov:</label><br />
+      <label data-key="order-form-label" for="address">Address:</label><br />
       <input type="text" id="address" /><br />
 
-      <label for="postcode">Poštna št.:</label><br />
+      <label data-key="order-form-label" for="postcode">Post code:</label><br />
       <input type="number" id="postcode" /><br />
 
-      <label for="city">Kraj:</label><br />
+      <label data-key="order-form-label" for="city">City:</label><br />
       <input type="text" id="city" /><br />
 
-      <p>Način plačila</p>
+      <p data-key="payment-method">Form of payment</p>
 
       <input
         class="clickable"
@@ -162,7 +158,7 @@
         name="paymentoption"
         value="creditcard"
       />
-      <label class="clickable" for="creditcard">Kreditna kartica</label>
+      <label data-key="order-form-label" class="clickable" for="creditcard">Credit card</label>
 
       <input
         class="clickable"
@@ -171,12 +167,20 @@
         name="paymentoption"
         value="paypal"
       />
-      <label class="clickable" for="paypal">Paypal</label><br />
+      <label data-key="order-form-label" class="clickable" for="paypal">Paypal</label><br />
 
-      <input class="clickable" type="submit" id="submit" value="NAROČI" />
+      <button data-key="order-btn" class="clickable" id="submit">ORDER</button>
     </form>
 
+    <div class="language-switcher">
+      <select id="language-select" onchange="changeLanguage()" name="language">
+        <option value="SI">SI</option>
+        <option selected value="EN">EN</option>
+      </select>
+    </div>
+
     <script src="sharpener.js"></script>
+    <script src="language.js"></script>
     <script src="../homeButton.js"></script>
   </body>
 </html>

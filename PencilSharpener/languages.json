@@ -1,0 +1,99 @@
+{
+    "english": {
+        "tab-title": "Pencil sharpener",
+        "headline-quote": "New in sharpener technology",
+        "img-title": [
+            "Brand new design", 
+            "Incredibly practical", 
+            "Unmatched elegance", 
+            "Stunning grip"],
+        "img-caption": [
+            "Impossibly beautiful",
+            "Sits in your pocket",
+            "Can stand on it's head",
+            "So grippy!"],
+        "customers-title": "Don't believe us?",
+        "customers-subtitle": "Just look at these suspiciously satisfied customers!",
+        "customer-name": [
+            "Marie - Stoke-on-Trent",
+            "Steve - Brighton",
+            "Boris - Liverpool",
+            "Tony - Oxford"
+        ],
+        "customer-review": [
+            "Truly incredible, I've never sharpened a pencil that quickly!",
+            "When my grandson first told me about this pencil sharpener I didn't believe him. I soon understood his amazement. I knew this invention would change the world!",
+            "Everyone knows the old Chinese proverb - 'Time is money'. This pencil sharpener saves a lot of it!",
+            "In schools back in the day, we could've only dreamt of this. Incredible!"
+        ],
+        "discount-enticement" : [
+            "Hurry while it's still in stock!",
+            "Order now to get a 20% discount and a <b>FREE</b> pencil!!!",
+            "SO WHAT ARE YOU WAITING FOR?"
+        ],
+        "discount-contact": "You can reach us on <span>061-825-333</span>, or write to us at <span>sharpenersales@gmail.com</span>",
+        "discount-order": "Or order here with just one click!",
+        "order-btn": ["ORDER", "ORDER"],
+        "order-form-label": [
+            "Name:",
+            "Last name:",
+            "e-mail:",
+            "Phone number:",
+            "Address:",
+            "Post code:",
+            "City:",
+            "Credit card",
+            "Paypal"
+        ],
+        "payment-method": "Form of payment"
+    },
+
+    "slovene": {
+        "tab-title": "Šilček",
+        "headline-quote": "Šilček, kot ga še nikoli niste videli",
+        "img-title": [
+            "Popolnoma nov dezajn", 
+            "Izjemna praktičnost", 
+            "Neprekosljiva eleganca", 
+            "Osupljiv oprijem"],
+        "img-caption": [
+            "Nemogoča lepota",
+            "Sede v žep",
+            "Lahko stoji na glavi",
+            "Kva ga prime"],
+        "customers-title": "Nam ne verjamete?",
+        "customers-subtitle": "Samo poglejte si te sumljivo zadovoljne stranke!",
+        "customer-name": [
+            "Marija - Hrastje pri Grosupljem",
+            "Stane - Mlaka pri Kranju",
+            "Borut - Celje",
+            "Tone - Izola"
+        ],
+        "customer-review": [
+            "Resnično neverjetno, nikoli še nisem tako hitro ošilila svinčnika!",
+            "Ko mi je vnuk prvič povedal za ta šilček mu nisem verjel. Po le nekaj minutah pa sem razumel njegovo osuplost. Vedel sem, da bo ta izum spremenil svet!",
+            "Gotovo smo že vsi slišali starodavni kitajski pregovor - 'Čas je denar'. S tem šilčkom mi ga preostane ogromno!",
+            "V Jugoslaviji smo v šoli o takih izumih lahko le fantazirali. Neverjetno!"
+        ],
+        "discount-enticement" : [
+            "Pohitite dokler je še v zalogi!",
+            "Ob takojšnem naročilu prejmete 20% popusta in <b>ZASTONJ</b> svinčnik!!!",
+            "TOREJ KAJ ŠE ČAKATE?"
+        ],
+        "discount-contact": "Lahko nas pokličete na <span>061-825-333</span>, pišete na <span>silcekprodaja@gmail.com</span>",
+        "discount-order": "Ali pa naročite samo z enim klikom kar tukaj!",
+        "order-btn": ["NAROČITE", "NAROČI"],
+        "order-form-label": [
+            "Ime:",
+            "Priimek:",
+            "E-naslov:",
+            "Telefon:",
+            "Naslov:",
+            "Poštna št.:",
+            "Kraj:",
+            "Kreditna kartica",
+            "Paypal"
+        ],
+        "payment-method": "Način plačila"
+    }
+}

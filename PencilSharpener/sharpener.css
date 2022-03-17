@@ -1,3 +1,12 @@
+:root {
+  --main-clr: rgb(50, 161, 93);
+  --main-clr-transparent: rgba(50, 161, 93, 0.75);
+  --clr-btn: rgb(42, 124, 73);
+  --clr-light: rgb(73, 175, 112);
+  --clr-lighter: rgb(91, 214, 138);
+  --clr-darkest: rgb(26, 112, 59);
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -29,7 +38,7 @@ STYLES UP TO 600px SCREEN WIDTH
   width: 100%;
   height: 60px;
   line-height: 60px;
-  background-color: rgba(50, 161, 93, 0.75);
+  background-color: var(--main-clr-transparent);
   position: absolute;
   left: 0;
   top: 1em;
@@ -99,7 +108,7 @@ STYLES UP TO 600px SCREEN WIDTH
   height: 1.5em;
   line-height: 1.5em;
   font-size: 30px;
-  background-color: rgba(50, 161, 93, 0.75);
+  background-color: var(--main-clr-transparent);
 }
 
 .images .img-description .img-caption {
@@ -109,11 +118,11 @@ STYLES UP TO 600px SCREEN WIDTH
   padding: 0.5em;
   color: white;
   font-size: 18px;
-  max-width: 50%;
+  max-width: 75%;
   border-radius: 0 5px 5px 0;
   border: 1px solid white;
   border-left: none;
-  background-color: rgba(50, 161, 93, 0.75);
+  background-color: var(--main-clr-transparent);
 }
 
 .customer-reviews {
@@ -175,32 +184,32 @@ STYLES UP TO 600px SCREEN WIDTH
   font-weight: bold;
   border-radius: 15px;
   border: 2px solid black;
-  background-color: #32a15d;
+  background-color: var(--main-clr);
 }
 
 .discount-block #first {
-  background-color: #8af3b2;
+  background-color: rgb(138, 242, 178);
   font-size: 40px;
   font-weight: bold;
 }
 
 .discount-block #second {
-  background-color: #5bd68a;
+  background-color: rgb(91, 214, 138);
 }
 
 .discount-block #third {
-  background-color: #42bb71;
+  background-color: rgb(66, 187, 113);
 }
 
 .discount-block #fourth {
-  background-color: #32a15d;
+  background-color: var(--main-clr);
 }
 
 .discount-block #fifth {
-  background-color: #238649;
+  background-color: rgb(35, 134, 73);
 }
 
-.discount-block p {
+.discount-block p, .discount-block #fifth {
   margin: 0;
   padding: 1em;
   font-size: 28px;
@@ -214,9 +223,10 @@ STYLES UP TO 600px SCREEN WIDTH
 .discount-block p span {
   font-weight: bold;
   font-style: italic;
+  word-break: break-word;
 }
 
-.discount-block p button {
+.discount-block #fifth button {
   display: block;
   margin: 0 auto;
   width: 75%;
@@ -224,21 +234,21 @@ STYLES UP TO 600px SCREEN WIDTH
   font-size: 36px;
   -webkit-box-shadow: 0 8px #666;
   box-shadow: 0 8px #666;
-  background-color: #5bd68a;
+  background-color: var(--clr-lighter);
   border-radius: 10px;
   border: 3px outset white;
   font-weight: bold;
   font-family: "Baloo Bhaijaan 2", cursive;
 }
 
-.discount-block p button:hover {
-  background-color: #49af70;
+.discount-block #fifth button:hover {
+  background-color: var(--clr-light);
 }
 
-.discount-block p button:active {
+.discount-block #fifth button:active {
   -webkit-box-shadow: 0 5px #414141;
   box-shadow: 0 5px #414141;
-  background-color: #2a7c49;
+  background-color: var(--clr-btn);
   -webkit-transform: translateY(3px);
   transform: translateY(3px);
 }
@@ -248,7 +258,7 @@ STYLES UP TO 600px SCREEN WIDTH
   padding: 1em 2em;
   font-size: 18px;
   color: white;
-  background-color: #1a703b;
+  background-color: var(--clr-darkest);
 }
 
 #order-form label {
@@ -305,7 +315,7 @@ STYLES UP TO 600px SCREEN WIDTH
   margin: 1.5em 0 0 0;
   font-weight: bold;
   font-size: 24px;
-  background-color: #5bd68a;
+  background-color: var(--clr-lighter);
   border: 3px outset white;
   border-radius: 5px;
   -webkit-box-shadow: 0 6px #666;
@@ -313,15 +323,49 @@ STYLES UP TO 600px SCREEN WIDTH
 }
 
 #order-form #submit:hover {
-  background-color: #49af70;
+  background-color: var(--clr-light);
 }
 
 #order-form #submit:active {
   -webkit-box-shadow: 0 5px #414141;
   box-shadow: 0 5px #414141;
-  background-color: #2a7c49;
+  background-color: var(--clr-btn);
   -webkit-transform: translateY(3px);
   transform: translateY(3px);
+}
+
+.language-switcher {
+  position: fixed;
+  height: 30px;
+  width: 33px;
+  left: 0;
+  bottom: 100px;
+  background-color: var(--main-clr);
+  padding: 6px 1px 6px 0px;
+  border-radius: 50% / 50%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: 2px solid black;
+  border-left: none;
+}
+
+.language-switcher select {
+  display: block;
+  width: 90%;
+  height: 100%;
+  border: none;
+  padding-left: 3px;
+  border-radius: 30% / 50%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 16px;
+}
+
+.language-switcher select::after {
+  height: 100%;
+  content: "&cudarrr;"
 }
 
 /*-------------------------------
@@ -351,7 +395,7 @@ STYLES FROM 600 to 799px WIDTH
     display: block;
     margin: 0 auto;
   }
-  .discount-block p button {
+  .discount-block #fifth button {
     width: 60%;
   }
   #order-form input:not([type="radio"]) {
@@ -378,13 +422,13 @@ STYLES FROM 800 to 999px WIDTH
   .discount-block #first {
     font-size: 48px;
   }
-  .discount-block p {
+  .discount-block p, .discount-block #fifth {
     font-size: 36px;
   }
   .discount-block p img {
     width: 65%;
   }
-  .discount-block p button {
+  .discount-block #fifth button {
     width: 50%;
     font-size: 42px;
   }
@@ -398,6 +442,11 @@ STYLES FROM 800 to 999px WIDTH
   #order-form #submit {
     max-width: 30%;
     margin: 1.5em auto 0.5em auto;
+  }
+
+  .language-switcher {
+    width: 50px;
+    height: 35px;
   }
 }
 
@@ -431,7 +480,7 @@ STYLES FROM 1000 to 1199px WIDTH
   .discount-block p img {
     width: 50%;
   }
-  .discount-block p button {
+  .discount-block #fifth button {
     width: 40%;
     height: 120px;
     font-size: 46px;
