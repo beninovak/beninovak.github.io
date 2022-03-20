@@ -12,5 +12,10 @@
 ---prevent adding empty space---
 ---"delete selected" btn should check if no checkbox is checked---
 
+add null check for todos in localStorage
+popup background fix height on smaller screens
+popup fix buttons not working
+pressing enter to add item does nothing
+
 move items around list---drag events
 

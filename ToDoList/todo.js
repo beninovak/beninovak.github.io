@@ -35,6 +35,8 @@ const noButton = document.getElementById("no-button");
 const yesButton = document.getElementById("yes-button");
 const OKButton = document.getElementById("ok-button");
 
+
+if(!localStorage.getItem("todos")) {localStorage.setItem("todos", "[]")};
 // If local storage already has some to-do's, add them to the local array
 if(JSON.parse(localStorage.getItem("todos")).length !== 0) {
   // Items are stored in the same variable-
