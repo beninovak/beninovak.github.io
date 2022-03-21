@@ -49,7 +49,7 @@ if(JSON.parse(localStorage.getItem("todos")).length !== 0) {
   });
 
   deleteSelectedBtn.classList.remove("disabled");
-  deleteSelectedBtn.ariaDisabled = false;
+  deleteSelectedBtn.disabled = false;
 }
 
 // Updates userChoice when the choice buttons are clicked
@@ -57,9 +57,8 @@ noButton.addEventListener("click", () => userChoice = false);
 yesButton.addEventListener("click", () => userChoice = true);
 OKButton.addEventListener("click", () => userChoice = "OK");
 deleteSelectedBtn.addEventListener("click", (e) => {
-  // For some reason reading the ariaDisabled attribute returns a string.
-  // If that string is "false", meaning the button is not disabled, run the function.
-  if((e.target.ariaDisabled) === "false") {
+  // If the button is not disabled, run the function.
+  if(e.target.disabled === false) {
     deleteSelected();
   }
 });
@@ -176,7 +175,7 @@ function createItemToAdd(itemToAdd) {
   });
 
   deleteSelectedBtn.classList.remove("disabled");
-  deleteSelectedBtn.ariaDisabled = false;
+  deleteSelectedBtn.disabled = false;
 
   // Add the to-do item to the list
   toDoList.appendChild(itemToBeAdded);
@@ -276,7 +275,7 @@ async function deleteItem() {
 
   if(itemCounter === 0) {
     deleteSelectedBtn.classList.add("disabled");
-    deleteSelectedBtn.ariaDisabled = true;
+    deleteSelectedBtn.disabled = true;
   }
 
   allTodos.splice(listItemId, 1);
@@ -483,7 +482,7 @@ async function deleteSelected() {
 
   if(itemCounter === 0) {
     deleteSelectedBtn.classList.add("disabled");
-    deleteSelectedBtn.ariaDisabled = true;
+    deleteSelectedBtn.disabled = true;
   }
 
   // Cycles through all checkboxes
