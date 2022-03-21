@@ -35,7 +35,6 @@ const noButton = document.getElementById("no-button");
 const yesButton = document.getElementById("yes-button");
 const OKButton = document.getElementById("ok-button");
 
-
 if(!localStorage.getItem("todos")) {localStorage.setItem("todos", "[]")};
 // If local storage already has some to-do's, add them to the local array
 if(JSON.parse(localStorage.getItem("todos")).length !== 0) {
@@ -215,10 +214,6 @@ async function addItemToList() {
 
   // If array already has an identical to-do, warn the user
   if(isDuplicate) {
-
-    // Display warning popup
-    warningAlert.classList.remove("hide")
-
     // Store user's decision about creating-
     // a duplicate with handleWarning(), which-
     // periodically checks whether the user has made a choice.
@@ -228,13 +223,9 @@ async function addItemToList() {
     // warning popup, clear the input, and leave the function.
     // If 'true' the function proceeds as normal and adds the duplicate.
     if(!createDuplicate) {
-      warningAlert.classList.add("hide");
       itemInput.value = "";
       return;
     }
-
-    // Hide warning popup
-    warningAlert.classList.add("hide");
   }
 
   createItemToAdd({
@@ -261,25 +252,16 @@ async function deleteItem() {
 
   // Checks if the item marked for deletion is marked as important
   if(listItem.classList.contains("important")) {
-
-    // Display popup
-    warningAlert.classList.remove("hide");
-
     // Store user's decision about deleting an-
     // important to-do with handleWarning(), which-
     // periodically checks whether the user has made a choice.
     let deleteImportant = await handleWarning("deleteImportant");
 
-    // If user chose not to delete an important-
-    // to-do, hide warning popup and leave the function.
+    // If user chose not to delete an important to-do, leave the function.
     // If 'true' the function proceeds as normal and deletes the to-do.
     if(!deleteImportant) {
-      warningAlert.classList.add("hide");
       return;
     }
-
-    // Hide warning popup
-    warningAlert.classList.add("hide");
   }
 
   // Cycles through the to-do items and adjusts their id's.
@@ -393,6 +375,11 @@ function handleWarning(type, choice) {
     default:
       break;
   }
+
+  // Display warning and disabled input
+  warningAlert.classList.remove("hide");
+  itemInput.disabled = true;
+
   // As soon as user has pressed either the 'yes' or 'no' button,
   // 'result != null' will become true, and the choice will be passed-
   // on in the 'resolve(result)'. The promise performs the check every 100ms.
@@ -406,6 +393,10 @@ function handleWarning(type, choice) {
         // Without this the choice button clicks don't register-
         // properly in the case of another duplicate warning popup.
         clearInterval(checkInterval);
+
+        // Hide warning and enable input
+        warningAlert.classList.add("hide");
+        itemInput.disabled = false;
         resolve(result);
       }
     }, 100);
@@ -465,9 +456,6 @@ async function deleteSelected() {
 
   // Gets list of all checkboxes
   let allCheckboxes = document.querySelectorAll("#list input");
-
-  warningAlert.classList.remove("hide");
-
   let counter = 0;
 
   let anyTodoChecked = false;
@@ -487,7 +475,6 @@ async function deleteSelected() {
     let deleteSelected = await handleWarning("deleteSelected");
 
     if(!deleteSelected) {
-      warningAlert.classList.add("hide");
       return;
     }
   }
@@ -525,9 +512,6 @@ async function deleteSelected() {
   for(let i = 0; i < allItems.length; i++) {
     allItems[i].setAttribute("item-id", i);
   }
-  
-  // Hide warning
-  warningAlert.classList.add("hide");
 }
 
 window.addEventListener("beforeunload", () => {

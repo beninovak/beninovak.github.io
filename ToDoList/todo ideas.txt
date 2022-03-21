@@ -16,6 +16,7 @@ add null check for todos in localStorage
 popup background fix height on smaller screens
 popup fix buttons not working
 pressing enter to add item does nothing
+prevent interaction with input when popup is active
 
 move items around list---drag events
 
