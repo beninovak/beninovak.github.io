@@ -108,6 +108,7 @@ header .link {
     text-align: center;
     padding-inline: 15px;
     gap: 15px;
+    justify-content: center;
 }
 
 .projects-section h1 {
