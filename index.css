@@ -5,6 +5,11 @@
     --secondary-color: #b5399c;
     font-size: 20px;
     scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
 }
 
 .link {
@@ -83,7 +88,7 @@ header .link {
     transition-duration: 0.2s;
 
     /* For some reason this centers the arrow vertically*/
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .scroll-to-projects:hover {
@@ -91,8 +96,8 @@ header .link {
 }
 
 .scroll-to-projects img {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     filter: invert(100%);
 }
 
@@ -101,6 +106,8 @@ header .link {
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
+    padding-inline: 15px;
+    gap: 15px;
 }
 
 .projects-section h1 {
@@ -108,13 +115,21 @@ header .link {
     font-weight: bold;
 }
 
+.projects-section #github-link {
+    flex-basis: 100%;
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.projects-section #github-link a {overflow-wrap: anywhere}
+
 .project {
-    max-width: 85%;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 15px;
-    padding-bottom: 0;
     box-shadow: 0 0 10px #333;
     transition-duration: 0.3s;
+    transition-property: box-shadow;
 }
 
 .project:hover {box-shadow: 0 0 30px #333;}
@@ -155,7 +170,7 @@ header .link {
 
 #contact {
     padding-inline: 10px;
-    margin-top: 50px;
+    margin-top: 30px;
     padding-block: 20px;
     background-color: var(--main-color);
 }
@@ -169,6 +184,7 @@ header .link {
     animation-fill-mode: none;
 }
 
+/* Used when user is linked to contact footer */
 @keyframes blink {
     0% {
         background-color: var(--main-color);
@@ -212,20 +228,21 @@ header .link {
 
     .projects-section {
         flex-direction: row;
-        padding-inline: 10px;
+        gap: 15px;
     }
 
     .projects-section h1 {flex-basis: 100%;}
 
+    .projects-section #github-link {font-size: 1.3rem;}
+
     .project {
         display: flex;
         flex-direction: column;
-        margin-block: 10px;
+        margin: unset;
         justify-content: space-evenly;
 
-        /* 30px for left and right padding (15px each),
-           and 10px for left and right clearance  */
-        flex-basis: calc(50% - 50px);
+        /* Half minus half of the gap */
+        flex-basis: calc(50% - 7.5px);
     }
 
     .project .page-ss {margin-bottom: 30px;}
@@ -249,21 +266,24 @@ header .link {
     header img {width: 130px;}
 
     .about {min-height: calc(100vh - 160px);}
+
+    .projects-section {
+        padding-inline: 25px;
+        gap: 25px;
+    }
+
+    .projects-section #github-link {font-size: 1.5rem;}
+
+    /* When there are 3 columns, there are 2 gaps. 
+       Together the gaps are 50px, so each column needs-
+       to shrink by a third of that. */
+    .project {flex-basis: calc(33.333% - calc(50px / 3));}
 }
 
 @media(min-width: 1200px) {
-    .projects-section {justify-content: space-around;}
-
     .projects-section h1 {
         font-size: 2.3rem;
         margin-block: 50px; 
-    }
-
-    .project {
-        padding: 20px;
-
-        /* 20px for padding on and 10px for clearance on each side*/
-        flex-basis: calc(33.33% - 60px);
     }
 
     #contact h1 {font-size: 2rem}
@@ -272,7 +292,16 @@ header .link {
 }
 
 @media(min-width: 1400px) {
+
+    .projects-section {
+        padding-inline: 30px;
+        gap: 30px;
+    }
+
+     /* When there are 4 columns, there are 3 gaps. 
+       Together the gaps are 90px, so each column needs-
+       to shrink by a quarter of that. */
     .project {
-        flex-basis: calc(25% - 60px);
+        flex-basis: calc(25% - calc(90px / 4));
     }
 }
