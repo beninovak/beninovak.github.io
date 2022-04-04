@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!--<link rel="stylesheet" type="text/css" href="style.css" />-->
+    <title>Imenik kontaktov</title>
+    <link rel="stylesheet" type="text/css" href="sort.css" />
+  </head>
+
+  <body>
+    <div id="contacts">
+      <h1>IMENIK KONTAKTOV</h1>
+
+      <div id="contact-input">
+        <fieldset>
+          <legend>Add a new contact:</legend>
+
+          <div class="form-group"> 
+            <label for="first">First name: </label>
+            <input id="first" type="text" autofocus/>
+          </div>
+
+          <div class="form-group">
+            <label for="last">Last name: </label>
+            <input id="last" type="text"/>
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Telephone number: </label>
+            <input id="telephone" type="tel" />
+          </div>
+
+          <button id="addButton">Add to contacts</button>
+        </fieldset>
+      </div>
+
+      <div id="table-wrapper">
+        <table id="contacts-table">
+          <caption>
+            Podatki o dodanih kontaktih:
+          </caption>
+          <tbody>
+            <tr>
+                <!--data-order is used to determine the order direction of each header-->
+                <!--'this' is passed to sortTable function so that the function can access it's caller-->
+                <th class="clickable sorter"
+                    onclick="sortTable(this, 0)"
+                    data-order="ascending"
+                >First name<img class="sort-triangle" src="triangle.svg"/></th>
+    
+                <th class="clickable sorter" 
+                    onclick="sortTable(this, 1)" 
+                    data-order="ascending"
+                >Last name<img class="sort-triangle" src="triangle.svg"/></th>
+    
+                <th>Phone number</th>
+                <!--<th>&nbsp</th>-->
+              </tr>
+              <tr>
+                    <td>Vid</td>
+                    <td contenteditable="">Pimpernickel</td>
+                    <td>012345678</td>
+                </tr>
+                <tr>
+                    <td>Marko</td>
+                    <td>Mrgulana</td>
+                    <td>012345678</td>
+                </tr>
+                <tr>
+                    <td>Beni</td>
+                    <td>Katastrofa</td>
+                    <td>012345678</td>
+                </tr>
+                <tr>
+                    <td>Mato</td>
+                    <td>Abrahimović</td>
+                    <td>012345678</td>
+                </tr>
+                <tr>
+                    <td>Kris</td>
+                    <td>Petrulja</td>
+                    <td>012345678</td>
+                </tr>
+                <tr>
+                    <td>Eddie</td>
+                    <td>Šamarnik</td>
+                    <td>012345678</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Ozark</td>
+                    <td>012345678</td>
+                </tr>   
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="sort.js"></script>
+  </body>
+</html>
