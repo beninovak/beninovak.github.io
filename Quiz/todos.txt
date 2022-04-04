@@ -1,5 +1,0 @@
----shuffle answers---
----check answers after---
----connect to api---
-
-warn about losing progress on refresh?
