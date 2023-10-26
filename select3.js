@@ -5,8 +5,8 @@ Element.prototype.Select3 = function(config) {
 
     // If any options were set, apply them
     config = Select3_applyConfig(config)
-    // console.table(config)
 
+    // TODO --> Consider putting all other functions inside this one
     // TODO --> Minimize file: https://codebeautify.org/minify-js
     // TODO --> Check all other TODOs in IDE
 
@@ -79,7 +79,7 @@ Element.prototype.Select3 = function(config) {
             for (let sel3 of document.querySelectorAll('div.select3')) {
                 Select3_closeSelect3(sel3)
             }
-            Select3_openSelect3(select3, config)
+            Select3_openSelect3(select3, config.dropdownMaxHeight)
         })
     }
 
@@ -131,17 +131,25 @@ Element.prototype.Select3 = function(config) {
         return select.multiple ? value : value[0]
     }
 
+    select.open = function() {
+        Select3_openSelect3(select3, config.dropdownMaxHeight)
+    }
+
+    select.close = function() {
+        Select3_closeSelect3(select3)
+    }
+
     return select
 }
 
-function Select3_openSelect3(select3, config) {
+function Select3_openSelect3(select3, configDropdownMaxHeight) {
 
     select3.classList.add('opened')
 
     let inner = select3.querySelector('.inner')
 
     let dropdownMaxHeight = inner.scrollHeight
-    dropdownMaxHeight = dropdownMaxHeight > config.dropdownMaxHeight ? config.dropdownMaxHeight : dropdownMaxHeight
+    dropdownMaxHeight = dropdownMaxHeight > configDropdownMaxHeight ? configDropdownMaxHeight : dropdownMaxHeight
     inner.style.maxHeight = dropdownMaxHeight + inner.offsetHeight + 'px' // Here inner.offsetHeight is just the combined width of the top and bottom border
     inner.classList.remove('drop-up')
 
@@ -173,7 +181,7 @@ function Select3_openCloseSelect3(select3, config = {}) {
     select3.classList.toggle('opened')
 
     if (select3.classList.contains('opened')) {
-        Select3_openSelect3(select3, config)
+        Select3_openSelect3(select3, config.dropdownMaxHeight)
     } else {
         Select3_closeSelect3(select3)
     }
@@ -462,20 +470,6 @@ function Select3_isOptionValid(key, value) {
             return typeof value === 'function'
     }
 }
-
-// Program start
-let test = document.querySelector('.select3.groups').Select3({
-    search: false,
-    closeOnSelect: false,
-    minimumInputLength: 2,
-    dropdownMaxHeight: 300,
-    maximumSelectedOptions: 4,
-    placeholder: 'Please select an option...',
-    searchNoResults: 'No results found.',
-})
-test.addEventListener('change', () => {
-    console.log(test.val())
-})
 
 /* Handle closing of select when clicking outside it */
 document.addEventListener('click', (e) => {

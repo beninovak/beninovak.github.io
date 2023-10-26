@@ -1,0 +1,165 @@
+:root {
+    --black: #27374D;
+    --dark: #526D82;
+    --light: #9DB2BF;
+    --white: #DDE6ED;
+    --funky: #9299b2;
+}
+
+/* -------RESETS------- */
+html {
+    overflow-x: hidden;
+    background: #F6FBFD;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    padding-bottom: 200px;
+    background: var(--funky);
+}
+
+*, *::after, *::before {
+    color: inherit;
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+a, a:visited {
+    cursor: pointer;
+    /*color: initial;*/
+    text-decoration: none;
+}
+
+fieldset {
+    min-width: 0;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+*::placeholder {
+
+}
+/* -------RESETS END------- */
+
+/* TODO --> Get normal font. Maybe a cool monospace one? */
+
+header {
+    width: 100%;
+    padding: 40px;
+    background: var(--black);
+}
+
+header nav {
+    display: flex;
+    column-gap: 40px;
+    justify-content: center;
+}
+
+header nav a {
+    position: relative;
+    font-size: 1rem;
+    color: var(--white);
+    filter: drop-shadow(0 0 0 transparent);
+    transition: 0.3s filter;
+}
+
+header nav a:hover {
+    filter: drop-shadow(0 0 3px var(--white));
+}
+
+article {
+    width: 1300px;
+    max-width: 100%;
+    margin: 60px auto 0;
+    padding-inline: 40px;
+}
+
+article h1 {
+    color: var(--black);
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid var(--black);
+}
+
+table thead {
+    background: var(--light);
+    border: 2px solid var(--black);
+}
+
+table th {
+    color: var(--black);
+    padding: 10px;
+    text-align: start;
+    /*border: 1px solid var(--black);*/
+}
+
+table tbody {
+    border: 2px solid var(--black);
+}
+
+table td {
+    color: var(--black);
+    padding: 10px;
+    border: 2px solid var(--black);
+}
+
+table td:nth-child(2),
+table td:nth-child(3) {
+    text-align: center;
+}
+
+table td::selection {
+    color: var(--white);
+    background: var(--black);
+}
+
+code {
+    color: var(--white);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding: 3px 8px;
+    background: var(--black);
+    font-family: monospace, sans-serif;
+}
+
+code::selection {
+    color: var(--black);
+    background: var(--white);
+}
+
+/*header nav a::after {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    bottom: -4px;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    width: 100%;*/
+/*    height: 2px;*/
+/*    background: transparent;*/
+/*    transition: 0.3s background;*/
+/*}*/
+
+/*header nav a:hover::after {*/
+/*    background: var(--black);*/
+/*}*/

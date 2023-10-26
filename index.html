@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="select3.min.css">
+    <title>Select3</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#">Options</a>
+        <a href="#">Methods</a>
+        <a href="#">Examples</a>
+    </nav>
+</header>
+
+<article>
+    <h1>Select3 options</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Option</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>closeOnSelect</code></td>
+                <td>Boolean</td>
+                <td><code>true</code></td>
+                <td>Determines if Select3 element should be closed after selection is made.</td>
+            </tr>
+            <tr>
+                <td><code>search</code></td>
+                <td>Boolean</td>
+                <td><code>false</code></td>
+                <td>Toggles searching by option value.</td>
+            </tr>
+            <tr>
+                <td><code>minimumInputLength</code></td>
+                <td>Integer</td>
+                <td>3</td>
+                <td>Determines the minimum number of characters to be typed into the search box before starting search. Requires <code>search</code> to be <code>true</code>.</td>
+            </tr>
+            <tr>
+                <td><code>dropdownMaxHeight</code></td>
+                <td>Integer</td>
+                <td>300</td>
+                <td>Determines the maximum height in pixels of the dropdown element.</td>
+            </tr>
+            <tr>
+                <td><code>maximumSelectedOptions</code></td>
+                <td>Integer</td>
+                <td>100</td>
+                <td>Determines the maximum number of options allowed to be selected at once. Requires <code>&lt;select&gt;</code> element to have <code>multiple</code> attribute set.</td>
+            </tr>
+            <tr>
+                <td><code>placeholder</code></td>
+                <td>String</td>
+                <td>''</td>
+                <td>Determines text to display to user when before any option is selected.</td>
+            </tr>
+            <tr>
+                <td><code>searchNoResults</code></td>
+                <td>String</td>
+                <td>''</td>
+                <td>Determines text to display to user when searching yields to results. Requires <code>search</code> to be set to <code>true</code></td>
+            </tr>
+            <tr>
+                <td><code>formatOptionsFunction</code></td>
+                <td>Function</td>
+                <td>/</td>
+                <td>Allows custom formatting of dropdown options.</td>
+            </tr>
+        </tbody>
+    </table>
+</article>
+
+<script src="select3.min.js"></script>
+</body>
+</html>
