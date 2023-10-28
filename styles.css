@@ -79,7 +79,7 @@ header nav a {
 }
 
 header nav a:hover {
-    filter: drop-shadow(0 0 3px var(--white));
+    filter: drop-shadow(0 0 2px var(--white));
 }
 
 article {
@@ -94,6 +94,13 @@ article h1 {
     font-size: 2rem;
     line-height: 1.6;
 }
+
+article h2 {
+    color: var(--black);
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
 
 table {
     width: 100%;
@@ -111,7 +118,6 @@ table th {
     color: var(--black);
     padding: 10px;
     text-align: start;
-    /*border: 1px solid var(--black);*/
 }
 
 table tbody {
@@ -148,18 +154,49 @@ code::selection {
     background: var(--white);
 }
 
-/*header nav a::after {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    bottom: -4px;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    width: 100%;*/
-/*    height: 2px;*/
-/*    background: transparent;*/
-/*    transition: 0.3s background;*/
-/*}*/
+/* Examples page */
+section.example {
+    display: flex;
+    height: auto;
+    min-height: 100px;
+    margin-top: 100px;
+}
 
-/*header nav a:hover::after {*/
-/*    background: var(--black);*/
-/*}*/
+section.example main {
+    width: 50%;
+    min-height: 100%;
+    padding: 20px;
+}
+
+section.example main label {
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+section.example main .select3 {
+    width: 200px;
+    max-width: 200px;
+}
+
+section.example main .select3 span {
+    font-size: 0.8rem;
+}
+
+section.example aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    box-shadow: inset #666 0 0 6px 2px;
+    background: var(--white);
+}
+
+section.example aside code {
+    width: fit-content;
+    display: block;
+    margin-bottom: 5px;
+}
+/* Examples page end */

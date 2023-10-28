@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="select3.min.css">
+    <title>Select3 examples</title>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="index.html">Options</a>
+        <a href="#">Methods</a>
+        <a href="#">Examples</a>
+    </nav>
+</header>
+
+<article>
+    <h1>Select3 examples</h1>
+    
+    <h2>Basic select</h2>
+    
+    <section class="example">
+        <main>
+            <label for="example1">Select an option:</label>
+            <select id="example1">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </main>
+        <aside>
+            <code>
+                document.getElementById('example1').Select3()
+            </code>
+        </aside>
+    </section>
+
+    <section class="example">
+        <main>
+            <label for="example2"></label>
+            <select id="example2" multiple="multiple">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </main>
+        <aside>
+            <code>document.getElementById('example2').Select3()</code>
+            <code>placeholder: 'Select an option...'</code>
+            <code>closeOnSelect: false</code>
+        </aside>
+    </section>
+</article>
+
+<script src="select3.min.js"></script>
+<script src="examples.js"></script>
+</body>
+</html>
