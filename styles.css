@@ -17,9 +17,9 @@ html {
 }
 
 body {
-    min-height: 100vh;
     margin: 0;
     overflow: hidden;
+    min-height: 100vh;
     padding-bottom: 200px;
     background: var(--funky);
 }
@@ -32,7 +32,6 @@ body {
 
 a, a:visited {
     cursor: pointer;
-    /*color: initial;*/
     text-decoration: none;
 }
 
@@ -101,6 +100,11 @@ article h2 {
     line-height: 1.6;
 }
 
+article h3 {
+    color: var(--black);
+    font-size: 1rem;
+    line-height: 1.4;
+}
 
 table {
     width: 100%;
@@ -130,9 +134,10 @@ table td {
     border: 2px solid var(--black);
 }
 
+table td:nth-child(1),
 table td:nth-child(2),
 table td:nth-child(3) {
-    text-align: center;
+    white-space: nowrap;
 }
 
 table td::selection {
@@ -140,13 +145,23 @@ table td::selection {
     background: var(--black);
 }
 
+table td a:hover {
+    text-decoration: underline;
+}
+
 code {
     color: var(--white);
     font-size: 0.9rem;
     line-height: 1.6;
     padding: 3px 8px;
+    white-space: nowrap;
     background: var(--black);
     font-family: monospace, sans-serif;
+}
+
+code.red {
+    color: #d10606;
+    background: #fffafac9;
 }
 
 code::selection {
@@ -154,49 +169,37 @@ code::selection {
     background: var(--white);
 }
 
+code.red::selection {
+    color: #ffffffcc;
+    background: #a10303;
+}
+
 /* Examples page */
 section.example {
     display: flex;
     height: auto;
     min-height: 100px;
-    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-section.example main {
+section.example .left,
+section.example .right {
     width: 50%;
-    min-height: 100%;
-    padding: 20px;
 }
 
-section.example main label {
+section.example label {
     font-size: 0.9rem;
     display: block;
     margin-bottom: 5px;
 }
 
-section.example main .select3 {
+section.example .select3,
+section.example .select3 {
     width: 200px;
     max-width: 200px;
 }
 
-section.example main .select3 span {
+section.example .select3 span {
     font-size: 0.8rem;
-}
-
-section.example aside {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 50%;
-    height: 100%;
-    padding: 20px;
-    box-shadow: inset #666 0 0 6px 2px;
-    background: var(--white);
-}
-
-section.example aside code {
-    width: fit-content;
-    display: block;
-    margin-bottom: 5px;
 }
 /* Examples page end */

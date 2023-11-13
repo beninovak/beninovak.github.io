@@ -1,5 +1,12 @@
-document.getElementById('example1').Select3()
-document.getElementById('example2').Select3({
-    placeholder: 'Select an option...',
+document.getElementById('example-closeOnSelectTrue').Select3({
+    closeOnSelect: true,
+})
+document.getElementById('example-closeOnSelectFalse').Select3({
     closeOnSelect: false,
+})
+document.getElementById('example-searchTrue').Select3({
+    search: true,
+})
+document.getElementById('example-searchFalse').Select3({
+    search: false,
 })

@@ -11,51 +11,73 @@
 <header>
     <nav>
         <a href="index.html">Options</a>
-        <a href="#">Methods</a>
+        <a href="methods.html">Methods</a>
         <a href="#">Examples</a>
     </nav>
 </header>
 
 <article>
     <h1>Select3 examples</h1>
-    
-    <h2>Basic select</h2>
-    
+</article>
+
+<article>
+
+    <h2>Showcase of options using examples</h2>
+
+    <h2 id="closeOnSelect">closeOnSelect</h2>
     <section class="example">
-        <main>
-            <label for="example1">Select an option:</label>
-            <select id="example1">
-                <option>Option 1</option>
+        <div class="left">
+            <label for="example-closeOnSelectTrue">closeOnSelect: <code>true</code></label>
+            <select id="example-closeOnSelectTrue" multiple="multiple">
+                <option selected="selected">Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
                 <option>Option 4</option>
                 <option>Option 5</option>
             </select>
-        </main>
-        <aside>
-            <code>
-                document.getElementById('example1').Select3()
-            </code>
-        </aside>
+        </div>
+        <div class="right">
+            <label for="example-closeOnSelectFalse">closeOnSelect: <code>false</code></label>
+            <select id="example-closeOnSelectFalse" multiple="multiple">
+                <option value="opt1" selected="selected">Option 1</option>
+                <option value="opt2">Option 2</option>
+                <option value="opt3">Option 3</option>
+                <option value="opt4">Option 4</option>
+                <option value="opt5">Option 5</option>
+            </select>
+        </div>
     </section>
 
+    <h2 id="search">search</h2>
     <section class="example">
-        <main>
-            <label for="example2"></label>
-            <select id="example2" multiple="multiple">
-                <option>Option 1</option>
+        <div class="left">
+            <label for="example-searchTrue">search: <code>true</code></label>
+            <select id="example-searchTrue">
+                <option selected="selected">Option 1</option>
                 <option>Option 2</option>
                 <option>Option 3</option>
                 <option>Option 4</option>
                 <option>Option 5</option>
             </select>
-        </main>
-        <aside>
-            <code>document.getElementById('example2').Select3()</code>
-            <code>placeholder: 'Select an option...'</code>
-            <code>closeOnSelect: false</code>
-        </aside>
+        </div>
+        <div class="right">
+            <label for="example-searchFalse">search: <code>false</code></label>
+            <select id="example-searchFalse">
+                <option value="opt1" selected="selected">Option 1</option>
+                <option value="opt2">Option 2</option>
+                <option value="opt3">Option 3</option>
+                <option value="opt4">Option 4</option>
+                <option value="opt5">Option 5</option>
+            </select>
+        </div>
     </section>
+
+    <h2 id="minimumInputLength">minimumInputLength</h2>
+    <h2 id="dropdownMaxHeight">dropdownMaxHeight</h2>
+    <h2 id="maximumSelectedOptions">maximumSelectedOptions</h2>
+    <h2 id="placeholder">placeholder</h2>
+    <h2 id="searchNoResults">searchNoResults</h2>
+    <h2 id="formatOptionsFunction">formatOptionsFunction</h2>
 </article>
 
 <script src="select3.min.js"></script>
