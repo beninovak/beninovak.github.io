@@ -3,9 +3,16 @@ Element.prototype.Select3 = function(config) {
     const select = this
     if (select.tagName !== 'SELECT') return false
 
+    if (select.hasAttribute('data-select3-initialized') && select.getAttribute('data-select3-initialized') == '1') {
+        if (select.nextSibling?.classList.contains('select3')) {
+            select.nextSibling.remove();
+        }
+    }
+
     // If any options were set, apply them
     config = Select3_applyConfig(config)
 
+    // TODO --> If Select3 function called multiple times on <select>, destroy old one and re-initialize
     // TODO --> Consider putting all other functions inside this one
     // TODO --> Minimize file: https://codebeautify.org/minify-js
     // TODO --> Check all other TODOs in IDE
@@ -46,7 +53,6 @@ Element.prototype.Select3 = function(config) {
 
     let inner = document.createElement('div')
     inner.classList.add('inner')
-    // TODO - consider this --> inner.setAttribute('role', 'listbox')
 
     // Search input
     if (config.search) {
@@ -131,13 +137,21 @@ Element.prototype.Select3 = function(config) {
         return select.multiple ? value : value[0]
     }
 
-    select.open = function() {
+    select.open = function(e = null) {
+        if (e != null) {
+            e.stopPropagation()
+        }
         Select3_openSelect3(select3, config.dropdownMaxHeight)
     }
 
-    select.close = function() {
+    select.close = function(e = null) {
+        if (e != null) {
+            e.stopPropagation()
+        }
         Select3_closeSelect3(select3)
     }
+
+    select.setAttribute('data-select3-initialized', '1')
 
     return select
 }
@@ -191,7 +205,6 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
 
     let optEl = document.createElement('span')
     optEl.setAttribute('data-value', opt.value.toString())
-    // TODO - consider this --> optEl.setAttribute('role', 'option')
 
     // Transfer data- attributes
     if (Object.keys(opt.dataset).length) {
@@ -205,7 +218,6 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
     if (opt.selected) {
 
         let cloneEl = optEl.cloneNode()
-        // TODO - consider this --> cloneEl.removeAttribute('role')
         cloneEl.classList.add('selected-top')
 
         // Format option if special formatting exists, else just fill option with text
@@ -256,7 +268,6 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
 
         let el = e.target
         let cloneEl = el.cloneNode()
-        // TODO - consider this --> cloneEl.removeAttribute('role')
         cloneEl.innerHTML = el.innerHTML
         cloneEl.classList.add('selected-top')
 
@@ -474,10 +485,12 @@ function Select3_isOptionValid(key, value) {
 /* Handle closing of select when clicking outside it */
 document.addEventListener('click', (e) => {
     let el = e.target
-    let clickedSelect = el.closest('.select3')
+    let clickedSelect = el.closest('div.select3')
     if (clickedSelect === null) {
         for (let select3 of document.querySelectorAll('div.select3')) {
             Select3_closeSelect3(select3)
         }
     }
 })
+
+// document.querySelector('#select3').Select3({})

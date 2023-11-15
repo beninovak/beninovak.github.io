@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="methods.css">
     <link rel="stylesheet" href="select3.min.css">
     <title>Select3 methods</title>
 </head>
@@ -37,19 +38,68 @@
                 </td>
             </tr>
             <tr>
-                <td><code><a href="#open">open()</a></code></td>
+                <td><code><a href="#open-close">open()</a></code></td>
                 <td>N / A</td>
                 <td>Opens select, thus enabling custom control of select.</td>
             </tr>
             <tr>
-                <td><code><a href="#close">close()</a></code></td>
+                <td><code><a href="#open-close">close()</a></code></td>
                 <td>N / A</td>
                 <td>Closes select, thus enabling custom control of select.</td>
             </tr>
         </tbody>
     </table>
+
+    <h2 id="val">val()</h2>
+    <section class="method">
+
+        <div class="left">
+            <label for="method-val-single">Single select</label>
+            <select id="method-val-single">
+                <option value="option-1" selected="selected">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3" selected="selected">Option 3</option>
+                <option value="option-4">Option 4</option>
+                <option value="option-5">Option 5</option>
+            </select>
+        </div>
+        <div class="right">
+            <label for="method-val-multiple">Multiple select</label>
+            <select id="method-val-multiple" multiple="multiple">
+                <option value="option-101">Option 101</option>
+                <option value="option-102">Option 102</option>
+                <option value="option-103">Option 103</option>
+                <option value="option-104" selected="selected">Option 104</option>
+                <option value="option-105" selected="selected">Option 105</option>
+            </select>
+        </div>
+
+        <button id="val-output-btn">Click here to output values of selects</button>
+
+        <p class="note"><i>Try selecting different options and clicking the button.</i></p>
+        <output></output>
+    </section>
+
+    <h2 id="open-close">open() and close()</h2>
+
+    <section class="method">
+
+        <div class="wrapper">
+            <select id="method-open-close">
+                <option value="option-1" selected="selected">Option 1</option>
+                <option value="option-2">Option 2</option>
+                <option value="option-3" selected="selected">Option 3</option>
+                <option value="option-4">Option 4</option>
+                <option value="option-5">Option 5</option>
+            </select>
+        </div>
+
+        <button id="open-btn">Click here to open select</button>
+        <button id="close-btn">Click here to close select</button>
+    </section>
 </article>
 
-<script src="select3.min.js"></script>
+<script src="select3.js"></script>
+<script src="methods.js"></script>
 </body>
 </html>

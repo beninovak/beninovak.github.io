@@ -1,0 +1,45 @@
+article h2 {
+    margin-top: 150px;
+}
+
+section.method {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+}
+
+section.method div.left,
+section.method div.right {
+    width: calc(50% - 10px);
+}
+
+section.method label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+section.method output {
+    width: 100%;
+    height: 120px;
+    padding: 20px;
+    background: var(--light);
+    font-family: monospace, sans-serif;
+    box-shadow: inset 0 0 5px 5px var(--black);
+}
+
+section.method p.note {
+    width: 100%;
+    margin-bottom: 5px;
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+section.method div.wrapper {
+    width: 100%;
+    display: block;
+}
+
+section.method button {
+    width: 40%;
+}

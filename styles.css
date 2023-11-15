@@ -49,13 +49,7 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
-
-*::placeholder {
-
-}
 /* -------RESETS END------- */
-
-/* TODO --> Get normal font. Maybe a cool monospace one? */
 
 header {
     width: 100%;
@@ -174,32 +168,35 @@ code.red::selection {
     background: #a10303;
 }
 
-/* Examples page */
-section.example {
-    display: flex;
-    height: auto;
-    min-height: 100px;
-    margin-bottom: 100px;
+code.result {
+    font-style: italic;
 }
 
-section.example .left,
-section.example .right {
-    width: 50%;
+code.red.result {
+    background: var(--white);
 }
 
-section.example label {
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 5px;
+div.select3 {
+    width: fit-content;
+    max-width: 500px;
 }
 
-section.example .select3,
-section.example .select3 {
-    width: 200px;
-    max-width: 200px;
-}
-
-section.example .select3 span {
+div.select3 .inner span,
+div.select3 span.selected-top {
     font-size: 0.8rem;
 }
-/* Examples page end */
+
+button {
+    height: 50px;
+    margin: 30px 0;
+    padding: 0 20px;
+    font-size: 20px;
+    color: var(--white);
+    background: var(--dark);
+    font-family: monospace, sans-serif;
+    box-shadow: inset 0 0 3px 3px var(--black);
+}
+
+button:active {
+    transform: translateY(3px);
+}
