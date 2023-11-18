@@ -76,7 +76,7 @@ header nav a:hover {
 }
 
 article {
-    width: 1300px;
+    width: 1500px;
     max-width: 100%;
     margin: 60px auto 0;
     padding-inline: 40px;
@@ -146,7 +146,7 @@ table td a:hover {
 code {
     color: var(--white);
     font-size: 0.9rem;
-    line-height: 1.6;
+    line-height: 1.8;
     padding: 3px 8px;
     white-space: nowrap;
     background: var(--black);

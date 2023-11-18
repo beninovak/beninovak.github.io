@@ -15,6 +15,7 @@
         <a href="#">Options</a>
         <a href="methods.html">Methods</a>
         <a href="examples.html">Examples</a>
+        <a href="download.html">Download</a>
     </nav>
 </header>
 
@@ -47,7 +48,10 @@
                 <td><code><a href="examples.html#minimumInputLength">minimumInputLength</a></code></td>
                 <td>Integer</td>
                 <td>3</td>
-                <td>Determines the minimum number of characters to be typed into the search box before starting search. Requires <code>search</code> to be <code>true</code>.</td>
+                <td>
+                    Determines the minimum number of characters to be typed into the search box before starting search.<br/>
+                    Requires <code>search</code> to be <code>true</code>.
+                </td>
             </tr>
             <tr>
                 <td><code><a href="examples.html#dropdownMaxHeight">dropdownMaxHeight</a></code></td>
@@ -59,7 +63,12 @@
                 <td><code><a href="examples.html#maximumSelectedOptions">maximumSelectedOptions</a></code></td>
                 <td>Integer</td>
                 <td>100</td>
-                <td>Determines the maximum number of options allowed to be selected at once. Requires <code>&lt;select&gt;</code> element to have <code>multiple</code> attribute set.</td>
+                <td>
+                    Determines the maximum number of options allowed to be selected at once.
+                    If passed number is smaller than the number of pre-selected options of <code>&lt;select&gt;</code> element,
+                    then <code>maximumSelectedOptions</code> will be set to the number of selected options.<br/>
+                    Requires <code>&lt;select&gt;</code> element to have <code>multiple</code> attribute set.
+                </td>
             </tr>
             <tr>
                 <td><code><a href="examples.html#placeholder">placeholder</a></code></td>
@@ -71,12 +80,15 @@
                 <td><code><a href="examples.html#searchNoResults">searchNoResults</a></code></td>
                 <td>String</td>
                 <td><code class="red">&lt;empty string&gt;</code></td>
-                <td>Determines text to display to user when searching yields to results. Requires <code>search</code> to be set to <code>true</code></td>
+                <td>
+                    Determines text to display to user when searching yields to results.<br/>
+                    Requires <code>search</code> to be set to <code>true</code>
+                </td>
             </tr>
             <tr>
                 <td><code><a href="examples.html#formatOptionsFunction">formatOptionsFunction</a></code></td>
                 <td>Function</td>
-                <td>/</td>
+                <td>N / A</td>
                 <td>Allows custom formatting of dropdown options.</td>
             </tr>
         </tbody>

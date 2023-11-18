@@ -1,7 +1,7 @@
 div.select3 {
     position: relative;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
     min-width: 180px;
     min-height: 40px;
     line-height: 40px;
