@@ -13,15 +13,30 @@ section.method div.right {
     width: calc(50% - 10px);
 }
 
+section.method div.left.code,
+section.method div.right.code {
+    width: 100%;
+}
+
+section.method div.left h3,
+section.method div.right h3 {
+    margin-top: 80px;
+}
+
 section.method label {
     display: block;
     margin-bottom: 10px;
 }
 
 section.method output {
+    display: block;
     width: 100%;
-    height: 120px;
+    min-height: 120px;
+    height: fit-content;
+    max-height: 500px;
     padding: 20px;
+    font-size: 0.8rem;
+    overflow-y: auto;
     background: var(--light);
     font-family: monospace, sans-serif;
     box-shadow: inset 0 0 5px 5px var(--black);
@@ -42,4 +57,10 @@ section.method div.wrapper {
 
 section.method button {
     width: 40%;
+}
+
+article #hover-paragraph {
+    height: 100px;
+    font-weight: bold;
+    line-height: 100px;
 }

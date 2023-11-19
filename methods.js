@@ -21,6 +21,7 @@ document.getElementById('val-output-btn').addEventListener('click', () => {
 const openClose = document.getElementById('method-open-close')
 const openBtn = document.getElementById('open-btn')
 const closeBtn = document.getElementById('close-btn')
+const hoverP = document.getElementById('hover-paragraph')
 
 openClose.Select3()
 
@@ -30,4 +31,11 @@ openBtn.addEventListener('click', (event) => {
 
 closeBtn.addEventListener('click', (event) => {
     openClose.close(event)
+})
+
+hoverP.addEventListener('mouseenter', () => {
+    openClose.open()
+})
+hoverP.addEventListener('mouseleave', () => {
+    openClose.close()
 })

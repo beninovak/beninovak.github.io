@@ -41,19 +41,18 @@
             <tr>
                 <td><code><a href="#open-close">open()</a></code></td>
                 <td>N / A</td>
-                <td>Opens select, thus enabling custom control of select.</td>
+                <td>Opens select.</td>
             </tr>
             <tr>
                 <td><code><a href="#open-close">close()</a></code></td>
                 <td>N / A</td>
-                <td>Closes select, thus enabling custom control of select.</td>
+                <td>Closes select.</td>
             </tr>
         </tbody>
     </table>
 
     <h2 id="val">val()</h2>
     <section class="method">
-
         <div class="left">
             <label for="method-val-single">Single select</label>
             <select id="method-val-single">
@@ -79,13 +78,66 @@
 
         <p class="note"><i>Try selecting different options and clicking the button.</i></p>
         <output></output>
+
+        <div class="left code">
+            <h3>HTML</h3>
+            <output>
+                <pre>
+&lt;div class=&quot;left&quot;&gt;
+    &lt;label for=&quot;method-val-single&quot;&gt;Single select&lt;/label&gt;
+    &lt;select id=&quot;method-val-single&quot;&gt;
+        &lt;option value=&quot;option-1&quot; selected=&quot;selected&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;option-2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;option-3&quot; selected=&quot;selected&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option value=&quot;option-4&quot;&gt;Option 4&lt;/option&gt;
+        &lt;option value=&quot;option-5&quot;&gt;Option 5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class=&quot;right&quot;&gt;
+    &lt;label for=&quot;method-val-multiple&quot;&gt;Multiple select&lt;/label&gt;
+    &lt;select id=&quot;method-val-multiple&quot; multiple=&quot;multiple&quot;&gt;
+        &lt;option value=&quot;option-101&quot;&gt;Option 101&lt;/option&gt;
+        &lt;option value=&quot;option-102&quot;&gt;Option 102&lt;/option&gt;
+        &lt;option value=&quot;option-103&quot;&gt;Option 103&lt;/option&gt;
+        &lt;option value=&quot;option-104&quot; selected=&quot;selected&quot;&gt;Option 104&lt;/option&gt;
+        &lt;option value=&quot;option-105&quot; selected=&quot;selected&quot;&gt;Option 105&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+                </pre>
+            </output>
+        </div>
+
+        <div class="right code">
+            <h3>Javascript</h3>
+            <output>
+                <pre>
+const single = document.getElementById('method-val-single')
+const multiple = document.getElementById('method-val-multiple')
+const output = document.querySelector('output')
+
+single.Select3()
+multiple.Select3({
+    closeOnSelect: false,
+})
+
+document.getElementById('val-output-btn').addEventListener('click', () => {
+    let singleValue = single.val()
+    let multipleValue = multiple.val()
+    output.innerHTML = `
+        Single select value (string): &lt;code class="red result"&gt;${singleValue}&lt;/code&gt;
+        Multiple select value (array): &lt;code class="red result"&gt;${multipleValue}&lt;/code&gt;
+    `
+})
+                </pre>
+            </output>
+        </div>
     </section>
 
     <h2 id="open-close">open() and close()</h2>
 
     <section class="method">
-
         <div class="wrapper">
+            <label for="method-open-close">Another select</label>
             <select id="method-open-close">
                 <option value="option-1" selected="selected">Option 1</option>
                 <option value="option-2">Option 2</option>
@@ -97,6 +149,60 @@
 
         <button id="open-btn">Click here to open select</button>
         <button id="close-btn">Click here to close select</button>
+        <p id="hover-paragraph" class="button">Mouse over this paragraph to open select, mouse out to close it.</p>
+
+        <div class="left code">
+            <h3>HTML</h3>
+            <output>
+                <pre>
+&lt;div class=&quot;wrapper&quot;&gt;
+    &lt;label for=&quot;method-open-close&quot;&gt;Another select&lt;/label&gt;
+    &lt;select id=&quot;method-open-close&quot;&gt;
+        &lt;option value=&quot;option-1&quot; selected=&quot;selected&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;option-2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;option-3&quot; selected=&quot;selected&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option value=&quot;option-4&quot;&gt;Option 4&lt;/option&gt;
+        &lt;option value=&quot;option-5&quot;&gt;Option 5&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;open-btn&quot;&gt;Click here to open select&lt;/button&gt;
+&lt;button id=&quot;close-btn&quot;&gt;Click here to close select&lt;/button&gt;
+&lt;p id=&quot;hover-paragraph&quot; class=&quot;button&quot;&gt;Mouse over this paragraph to open select, mouse out to close it.&lt;/p&gt;
+                </pre>
+            </output>
+        </div>
+
+        <div class="right code">
+            <h3>Javascript</h3>
+            <output>
+                <pre>
+const openClose = document.getElementById('method-open-close')
+const openBtn = document.getElementById('open-btn')
+const closeBtn = document.getElementById('close-btn')
+const hoverP = document.getElementById('hover-paragraph')
+
+openClose.Select3()
+
+openBtn.addEventListener('click', (event) => {
+    openClose.open(event)
+})
+
+closeBtn.addEventListener('click', (event) => {
+    openClose.close(event)
+})
+
+hoverP.addEventListener('mouseenter', () => {
+    openClose.open()
+})
+
+hoverP.addEventListener('mouseleave', () => {
+    openClose.close()
+})
+                </pre>
+            </output>
+        </div>
+
     </section>
 </article>
 

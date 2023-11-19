@@ -1,8 +1,14 @@
 section.example {
     display: flex;
+    flex-wrap: wrap;
     height: auto;
     min-height: 100px;
-    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+section.example h3 {
+    width: 100%;
 }
 
 section.example .left,
@@ -18,10 +24,46 @@ section.example label {
 
 section.example .select3,
 section.example .select3 {
-    width: 200px;
-    max-width: 200px;
+    width: 300px;
+    max-width: 300px;
 }
 
 section.example .select3 span {
     font-size: 0.8rem;
+}
+
+section.example .select3 .inner > span > span {
+    position: relative;
+    padding-left: 40px;
+}
+
+section.example .select3 .inner > span > span img {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 40px;
+}
+
+section.example p.note {
+    max-width: 60%;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #d10606;
+    background: #fffafac9;
+}
+
+section.example output {
+    display: block;
+    width: 100%;
+    min-height: 120px;
+    height: fit-content;
+    max-height: 500px;
+    padding: 20px;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    background: var(--light);
+    font-family: monospace, sans-serif;
+    box-shadow: inset 0 0 5px 5px var(--black);
 }

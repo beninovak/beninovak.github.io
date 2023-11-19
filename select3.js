@@ -1,20 +1,22 @@
-Element.prototype.Select3 = function(config) {
+Element.prototype.Select3 = function(config = {}) {
 
     const select = this
     if (select.tagName !== 'SELECT') return false
 
-    if (select.hasAttribute('data-select3-initialized') && select.getAttribute('data-select3-initialized') == '1') {
+    if (select.hasAttribute('data-select3-initialized') && select.getAttribute('data-select3-initialized') === '1') {
         if (select.nextSibling?.classList.contains('select3')) {
-            select.nextSibling.remove();
+            select.nextSibling.remove()
         }
+    }
+
+    if (!select.multiple) {
+        config.closeOnSelect = true
     }
 
     // If any options were set, apply them
     config = Select3_applyConfig(config)
 
-    // TODO --> If Select3 function called multiple times on <select>, destroy old one and re-initialize
-    // TODO --> Consider putting all other functions inside this one
-    // TODO --> Minimize file: https://codebeautify.org/minify-js
+    // TODO --> Rename
     // TODO --> Check all other TODOs in IDE
 
     let select3 = document.createElement('div')
@@ -79,20 +81,15 @@ Element.prototype.Select3 = function(config) {
     }
 
     let label = document.querySelector('label[for="' + select.id + '"]')
-    if (label !== null) {
-        label.addEventListener('click', (e) => {
-            e.stopPropagation()
-            for (let sel3 of document.querySelectorAll('div.select3')) {
-                Select3_closeSelect3(sel3)
-            }
-            Select3_openSelect3(select3, config.dropdownMaxHeight)
-        })
-    }
+    label?.addEventListener('click', (e) => {
+        e.preventDefault()
+        select.open(e)
+    })
 
     for (let child of select.children) {
 
         if (child.tagName === 'OPTION') {
-            Select3_appendOptions(select, select3, inner, child, select.multiple, config)
+            Select3_appendOptions(select, select3, inner, child, config)
         } else if (child.tagName === 'OPTGROUP') {
 
             let optGroupEl = document.createElement('div')
@@ -105,26 +102,28 @@ Element.prototype.Select3 = function(config) {
             optGroupEl.append(optGroupTitle)
 
             for (let opt of child.children) {
-                Select3_appendOptions(select, select3, optGroupEl, opt, select.multiple, config)
+                Select3_appendOptions(select, select3, optGroupEl, opt, config)
             }
             inner.append(optGroupEl)
         }
     }
 
-    select3.append(inner)
-
-    if (
-        (select.multiple && select.selectedOptions.length === 0 && config.placeholder !== '') ||
-        (!select.multiple && select[0].value === '' && select[0].textContent === '' && config.placeholder !== '')
-    ) {
+    if (select.selectedOptions.length === 0 || (select[0].value === '' && select[0].textContent === '')) {
         let placeholder = document.createElement('span')
         placeholder.classList.add('placeholder')
-        placeholder.textContent = config.placeholder
 
+        let text = (config.placeholder !== '' ? config.placeholder : '\u00A0')
+
+        if (!select.multiple && select[0].label !== '') {
+            text = select[0].label
+        }
+
+        placeholder.textContent = text
         select3.querySelector('span.selected-top')?.remove()
-
         select3.prepend(placeholder)
     }
+
+    select3.append(inner)
 
     select.style.display = 'none'
     select.parentNode.insertBefore(select3, select.nextSibling)
@@ -138,16 +137,12 @@ Element.prototype.Select3 = function(config) {
     }
 
     select.open = function(e = null) {
-        if (e != null) {
-            e.stopPropagation()
-        }
+        e?.stopPropagation()
         Select3_openSelect3(select3, config.dropdownMaxHeight)
     }
 
     select.close = function(e = null) {
-        if (e != null) {
-            e.stopPropagation()
-        }
+        e?.stopPropagation()
         Select3_closeSelect3(select3)
     }
 
@@ -157,14 +152,11 @@ Element.prototype.Select3 = function(config) {
 }
 
 function Select3_openSelect3(select3, configDropdownMaxHeight) {
-
     select3.classList.add('opened')
-
     let inner = select3.querySelector('.inner')
-
     let dropdownMaxHeight = inner.scrollHeight
     dropdownMaxHeight = dropdownMaxHeight > configDropdownMaxHeight ? configDropdownMaxHeight : dropdownMaxHeight
-    inner.style.maxHeight = dropdownMaxHeight + inner.offsetHeight + 'px' // Here inner.offsetHeight is just the combined width of the top and bottom border
+    inner.style.maxHeight = dropdownMaxHeight + 'px' // Here inner.offsetHeight is just the combined width of the top and bottom border
     inner.classList.remove('drop-up')
 
     // Determine whether the options should drop-down or drop-up
@@ -201,10 +193,12 @@ function Select3_openCloseSelect3(select3, config = {}) {
     }
 }
 
-function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, config) {
+function Select3_appendOptions(select, select3, parent, opt, config) {
 
     let optEl = document.createElement('span')
     optEl.setAttribute('data-value', opt.value.toString())
+
+    let isMultipleSelect = select.multiple
 
     // Transfer data- attributes
     if (Object.keys(opt.dataset).length) {
@@ -214,31 +208,30 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
         }
     }
 
+    if (opt.value === '' && opt.textContent === '') {
+        optEl.classList.add('placeholder')
+        optEl.textContent = (config.placeholder !== '' ? config.placeholder : '\u00A0')
+    } else {
+        // Format option if special formatting exists, else just fill option with text
+        if (config.formatOptionsFunction !== null) {
+            let content = document.createElement('span')
+            content.append(config.formatOptionsFunction(opt))
+            optEl.innerHTML = content.innerHTML
+        } else {
+            optEl.textContent = (opt.label.length ? opt.label : opt.textContent)
+        }
+    }
+
     // Copy selected node for use at the top of select3
     if (opt.selected) {
 
         let cloneEl = optEl.cloneNode()
         cloneEl.classList.add('selected-top')
 
-        // Format option if special formatting exists, else just fill option with text
-        if (config.formatOptionsFunction !== null) {
-            cloneEl.innerHTML = config.formatOptionsFunction(opt)
-        } else {
-            if (opt.label.length) {
-                cloneEl.textContent = opt.label
-            } else {
-                cloneEl.textContent = opt.text
-            }
-        }
+        cloneEl.textContent = (opt.label.length ? opt.label : opt.textContent)
 
         if (isMultipleSelect) {
-            let closeBtn = document.createElement('b')
-            closeBtn.classList.add('remove')
-            closeBtn.textContent = '×'
-            closeBtn.addEventListener('click', (e) => {
-                Select3_removeOption(select, select3, e.target.parentElement)
-            })
-            cloneEl.prepend(closeBtn)
+            cloneEl.prepend(Select3_getCloseBtn(select, select3, config))
         }
 
         select3.append(cloneEl)
@@ -249,26 +242,14 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
         optEl.setAttribute('data-selected', '0')
     }
 
-    // Format option if special formatting exists, else just fill option with text
-    if (config.formatOptionsFunction !== null) {
-         optEl.innerHTML = config.formatOptionsFunction(opt)
-    } else {
-        if (opt.label.length) {
-            optEl.textContent = opt.label
-        } else {
-            optEl.textContent = opt.text
-        }
-    }
-
     if (opt.disabled) {
         optEl.classList.add('disabled')
     }
 
-    optEl.addEventListener('click', (e) => {
+    optEl.addEventListener('click', () => {
 
-        let el = e.target
-        let cloneEl = el.cloneNode()
-        cloneEl.innerHTML = el.innerHTML
+        let cloneEl = optEl.cloneNode()
+        cloneEl.innerHTML = optEl.textContent
         cloneEl.classList.add('selected-top')
 
         // Can only do stuff if the option in the original select is not disabled
@@ -313,17 +294,12 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
             } else if (isMultipleSelect) {
 
                 if (isOptionAlreadySelected) {
-                    select3.querySelector(':scope > span[data-value="' + cloneEl.getAttribute('data-value') + '"]').remove()
+                    select3.querySelector(':scope > span[data-value="' + cloneEl.getAttribute('data-value') + '"]')?.remove()
                     opt.removeAttribute('selected')
                     optEl.classList.remove('selected')
                     optEl.setAttribute('data-selected', '0')
 
-                    if (select.selectedOptions.length === 0 && config.placeholder !== '') {
-                        let placeholder = document.createElement('span')
-                        placeholder.classList.add('placeholder')
-                        placeholder.textContent = config.placeholder
-                        select3.prepend(placeholder)
-                    }
+                    Select3_showPlaceholderIfAppropriate(select, select3, config)
                 } else {
                     select3.insertBefore(cloneEl, select3.querySelector('.inner'))
                     opt.setAttribute('selected', 'selected')
@@ -331,9 +307,7 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
                     optEl.setAttribute('data-selected', '1')
 
                     // Only happens if the option that was just clicked was the first selected option.
-                    if (select.selectedOptions.length === 1) {
-                        select3.querySelector(':scope > span.placeholder')?.remove()
-                    }
+                    select3.querySelector(':scope > span.placeholder')?.remove()
                 }
 
                 // When the maximum allowed amount of options have been selected, add class to select3 to indicate this.
@@ -343,13 +317,7 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
                     select3.classList.remove('maxed')
                 }
 
-                let closeBtn = document.createElement('b')
-                closeBtn.classList.add('remove')
-                closeBtn.textContent = '×'
-                closeBtn.addEventListener('click', (e) => {
-                    Select3_removeOption(select, select3, e.target.parentElement)
-                })
-                cloneEl.prepend(closeBtn)
+                cloneEl.prepend(Select3_getCloseBtn(select, select3,config))
 
                 select.dispatchEvent(new Event('change'))
             }
@@ -362,18 +330,41 @@ function Select3_appendOptions(select, select3, parent, opt, isMultipleSelect, c
     parent.append(optEl)
 }
 
-function Select3_removeOption(select, select3, option) {
+function Select3_showPlaceholderIfAppropriate(select, select3, config) {
+    if (select.selectedOptions.length === 0 && config.placeholder !== '') {
+        let placeholder = document.createElement('span')
+        placeholder.classList.add('placeholder')
+        placeholder.textContent = config.placeholder
+        select3.prepend(placeholder)
+    }
+}
+
+function Select3_getCloseBtn(select, select3, config) {
+    let closeBtn = document.createElement('b')
+    closeBtn.classList.add('remove')
+    closeBtn.textContent = '×'
+    closeBtn.addEventListener('click', (e) => {
+        Select3_removeOption(select, select3, e.target.parentElement, config)
+    })
+    return closeBtn
+}
+
+function Select3_removeOption(select, select3, option, config) {
+
+    console.log(option)
 
     let value = option.getAttribute('data-value')
     let selectOption = select.querySelector('option[value="' + value + '"]')
 
-    selectOption.removeAttribute('selected')
+    selectOption?.removeAttribute('selected')
     let select3Option = select3.querySelector('.inner span[data-value="' + value + '"]')
 
     select3Option.classList.remove('selected')
     select3Option.setAttribute('data-selected', '0')
 
     option.remove()
+
+    Select3_showPlaceholderIfAppropriate(select, select3, config)
 
     // Needed because anytime an option is deselected by clicking on the 'x' in the tags, the <select>'s value is updated.
     select.dispatchEvent(new Event('change'))
@@ -433,15 +424,14 @@ function Select3_applyConfig(config) {
         search: false,
         closeOnSelect: true,
         minimumInputLength: 3,
+        dropdownMaxHeight: 280,
+        maximumSelectedOptions: 100,
         placeholder: '',
         searchNoResults: '',
-        dropdownMaxHeight: 300,
-        maximumSelectedOptions: 100,
         formatOptionsFunction: null,
     }
 
     for (let property in config) {
-
         // If 'options' argument contains a non-supported property, don't add it to 'opts'
         if (confs.hasOwnProperty(property)) {
             // Only add valid properties to opts
@@ -456,41 +446,57 @@ function Select3_applyConfig(config) {
 
 function Select3_isOptionValid(key, value) {
     switch (key) {
+        case 'search':
         case 'closeOnSelect':
             return typeof value === 'boolean'
 
-        case 'search':
-            return typeof value === 'boolean'
-
         case 'minimumInputLength':
-            return typeof value === 'number' && value > 0
-
         case 'dropdownMaxHeight':
-            return typeof value === 'number' && value > 0
-
         case 'maximumSelectedOptions':
             return typeof value === 'number' && value > 0
 
         case 'placeholder':
-            return typeof value === 'string' && value.length > 0 && value.length < 200
-
         case 'searchNoResults':
-            return typeof value === 'string' && value.length > 0 && value.length < 200
+            return typeof value === 'string' && value.length > 0 && value.length < 1000
 
         case 'formatOptionsFunction':
             return typeof value === 'function'
     }
 }
 
-/* Handle closing of select when clicking outside it */
-document.addEventListener('click', (e) => {
-    let el = e.target
-    let clickedSelect = el.closest('div.select3')
-    if (clickedSelect === null) {
-        for (let select3 of document.querySelectorAll('div.select3')) {
-            Select3_closeSelect3(select3)
+function Select3_initDocumentListener() {
+    /* Handle closing of select when clicking outside it */
+    document.addEventListener('click', (e) => {
+        e.stopPropagation()
+        let el = e.target
+        let clickedSelect = el.closest('div.select3')
+        if (clickedSelect === null) {
+            for (let select3 of document.querySelectorAll('div.select3')) {
+                Select3_closeSelect3(select3)
+            }
         }
-    }
-})
+    })
+}
 
-// document.querySelector('#select3').Select3({})
+Select3_initDocumentListener()
+
+// const sel = document.querySelector('#select3')
+// sel.Select3({
+//     search: true,
+//     searchNoResults: 'Found no matching options',
+//     closeOnSelect: false,
+//     placeholder: 'Please select an option placeholder',
+//     maximumSelectedOptions: 4,
+//     formatOptionsFunction: function(option) {
+//         if (option.dataset.img) {
+//             let span = document.createElement('span')
+//             let image = document.createElement('img')
+//             image.src = option.dataset.img
+//             span.append(image)
+//             span.append(option.textContent)
+//             return span
+//         } else {
+//             return option.textContent
+//         }
+//     }
+// })

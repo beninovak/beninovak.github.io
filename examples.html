@@ -26,8 +26,8 @@
 
     <h2>Showcase of options using examples</h2>
 
-    <h2 id="closeOnSelect">closeOnSelect</h2>
     <section class="example">
+        <h3 id="closeOnSelect">closeOnSelect</h3>
         <div class="left">
             <label for="example-closeOnSelectTrue">closeOnSelect: <code>true</code></label>
             <select id="example-closeOnSelectTrue" multiple="multiple">
@@ -41,17 +41,17 @@
         <div class="right">
             <label for="example-closeOnSelectFalse">closeOnSelect: <code>false</code></label>
             <select id="example-closeOnSelectFalse" multiple="multiple">
-                <option value="opt1" selected="selected">Option 1</option>
-                <option value="opt2">Option 2</option>
-                <option value="opt3">Option 3</option>
-                <option value="opt4">Option 4</option>
-                <option value="opt5">Option 5</option>
+                <option selected="selected">Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
             </select>
         </div>
     </section>
 
-    <h2 id="search">search</h2>
     <section class="example">
+        <h3 id="search">search</h3>
         <div class="left">
             <label for="example-searchTrue">search: <code>true</code></label>
             <select id="example-searchTrue">
@@ -65,24 +65,190 @@
         <div class="right">
             <label for="example-searchFalse">search: <code>false</code></label>
             <select id="example-searchFalse">
-                <option value="opt1" selected="selected">Option 1</option>
-                <option value="opt2">Option 2</option>
-                <option value="opt3">Option 3</option>
-                <option value="opt4">Option 4</option>
-                <option value="opt5">Option 5</option>
+                <option selected="selected">Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
             </select>
         </div>
     </section>
 
-    <h2 id="minimumInputLength">minimumInputLength</h2>
-    <h2 id="dropdownMaxHeight">dropdownMaxHeight</h2>
-    <h2 id="maximumSelectedOptions">maximumSelectedOptions</h2>
-    <h2 id="placeholder">placeholder</h2>
-    <h2 id="searchNoResults">searchNoResults</h2>
-    <h2 id="formatOptionsFunction">formatOptionsFunction</h2>
+    <section class="example">
+        <h3 id="minimumInputLength">minimumInputLength</h3>
+        <div class="left">
+            <label for="minimumInputLength2">minimumInputLength: <code>2</code></label>
+            <select id="minimumInputLength2">
+                <option selected="selected">Pomegranate</option>
+                <option>Pear</option>
+                <option>Grape</option>
+                <option>Grapefruit</option>
+                <option>Grozdje</option>
+            </select>
+        </div>
+        <div class="right">
+            <label for="minimumInputLength4">minimumInputLength: <code>4</code></label>
+            <select id="minimumInputLength4">
+                <option selected="selected">Pomegranate</option>
+                <option>Pear</option>
+                <option>Grape</option>
+                <option>Grapefruit</option>
+                <option>Grozdje</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="example">
+        <h3 id="dropdownMaxHeight">dropdownMaxHeight</h3>
+        <div class="left">
+            <label for="dropdownMaxHeight200">dropdownMaxHeight: <code>200</code></label>
+            <select id="dropdownMaxHeight200">
+                <option selected="selected">Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <option>Option 6</option>
+                <option>Option 7</option>
+                <option>Option 8</option>
+            </select>
+        </div>
+        <div class="right">
+            <label for="dropdownMaxHeight300">dropdownMaxHeight: <code>300</code></label>
+            <select id="dropdownMaxHeight300">
+                <option selected="selected">Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <option>Option 6</option>
+                <option>Option 7</option>
+                <option>Option 8</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="example">
+        <h3 id="maximumSelectedOptions">maximumSelectedOptions</h3>
+        <div class="left">
+            <label for="maximumSelectedOptions2">maximumSelectedOptions: <code>2</code></label>
+            <select multiple id="maximumSelectedOptions2">
+                <option selected="selected">Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </div>
+        <div class="right">
+            <label for="maximumSelectedOptions4">maximumSelectedOptions: <code>4</code></label>
+            <select multiple id="maximumSelectedOptions4">
+                <option selected="selected">Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="example">
+        <h3 id="placeholder">placeholder</h3>
+        <div class="left">
+            <label for="placeholderSingle">placeholder regular select:</label>
+            <select id="placeholderSingle">
+                <option value=""></option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+            <p class="note">
+                For single selects: First option must have empty <i>value</i> attribute and no text content set.
+                You can also specify a <i>label</i> attribute on the first(empty) option as the placeholder,
+                instead of specifying it in the javascript options object.
+            </p>
+        </div>
+        <div class="right">
+            <label for="placeholderMultiple">placeholder multiple select:</label>
+            <select multiple id="placeholderMultiple">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="example">
+        <h3 id="searchNoResults">searchNoResults</h3>
+        <div class="left">
+            <label for="searchNoResultsTest">searchNoResults: <code>"No option found"</code></label>
+            <select id="searchNoResultsTest">
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+                <option value="4">Option 4</option>
+                <option value="5">Option 5</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="example">
+        <h3 id="formatOptionsFunction">formatOptionsFunction</h3>
+        <div class="left">
+            <label for="formatOptionsFunctionTest">formatOptionsFunction:</label>
+            <select id="formatOptionsFunctionTest">
+                <option data-img-src="test/cart.png" selected="selected">Option 1</option>
+                <option data-img-src="test/globe.png">Option 2</option>
+                <option data-img-src="test/search.png">Option 3</option>
+                <option data-img-src="test/tree.png">Option 4</option>
+                <option data-img-src="test/user.png">Option 5</option>
+            </select>
+        </div>
+
+        <h3>HTML</h3>
+        <output>
+                <pre>
+&lt;label for=&quot;formatOptionsFunctionTest&quot;&gt;formatOptionsFunction:&lt;/label&gt;
+&lt;select id=&quot;formatOptionsFunctionTest&quot;&gt;
+    &lt;option data-img-src=&quot;test/cart.png&quot; selected=&quot;selected&quot;&gt;Option 1&lt;/option&gt;
+    &lt;option data-img-src=&quot;test/globe.png&quot;&gt;Option 2&lt;/option&gt;
+    &lt;option data-img-src=&quot;test/search.png&quot;&gt;Option 3&lt;/option&gt;
+    &lt;option data-img-src=&quot;test/tree.png&quot;&gt;Option 4&lt;/option&gt;
+    &lt;option data-img-src=&quot;test/user.png&quot;&gt;Option 5&lt;/option&gt;
+&lt;/select&gt;
+                </pre>
+        </output>
+
+        <h3>Javascript</h3>
+        <output>
+            <pre>
+document.getElementById('formatOptionsFunctionTest').Select3({
+    formatOptionsFunction: function(option) {
+        if (!option.value) {
+            return option.textContent;
+        }
+
+        let content = document.createElement('span')
+        let image = document.createElement('img')
+
+        image.src = option.dataset.imgSrc
+        image.alt = option.textContent
+        content.append(image)
+        content.append(option.textContent)
+
+        return content;
+    }
+})
+            </pre>
+        </output>
+    </section>
 </article>
 
-<script src="select3.min.js"></script>
+<script src="select3.js"></script>
 <script src="examples.js"></script>
 </body>
 </html>

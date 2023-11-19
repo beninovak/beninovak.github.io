@@ -186,8 +186,10 @@ div.select3 span.selected-top {
     font-size: 0.8rem;
 }
 
-button {
+button,
+.button {
     height: 50px;
+    line-height: 50px;
     margin: 30px 0;
     padding: 0 20px;
     font-size: 20px;

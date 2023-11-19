@@ -1,0 +1,7 @@
+article a {
+    color: var(--black);
+    font-size: 1.3em;
+    display: block;
+    width: fit-content;
+    text-decoration: underline;
+}

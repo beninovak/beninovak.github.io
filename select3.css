@@ -66,14 +66,19 @@ div.select3.opened {
 
 .select3 > .placeholder {
     display: block;
-    line-height: 40px;
-    color: #666;
     width: 100%;
     height: 40px;
+    color: #666;
+    line-height: 40px;
     background: #fff;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.select3.multiple > .placeholder {
+    height: 30px;
+    line-height: 30px;
 }
 
 .select3 .inner div.search-wrapper {
@@ -151,7 +156,8 @@ div.select3.opened {
 
 .select3.multiple > .selected-top {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    column-gap: 5px;
     width: fit-content;
     height: 28px;
     align-self: center;
@@ -160,12 +166,9 @@ div.select3.opened {
     border-radius: 10px;
     background: #c6c6c6;
     padding-inline-end: 5px;
-    padding-inline-start: 30px;
 }
 
 .select3.multiple > .selected-top b.remove {
-    position: absolute;
-    inset-inline-start: 0;
     display: inline-block;
     width: 25px;
     height: 100%;
