@@ -16,7 +16,7 @@ document.getElementById('minimumInputLength2').Select3({
 })
 document.getElementById('minimumInputLength4').Select3({
     search: true,
-    minimumInputLength: 3,
+    minimumInputLength: 4,
 })
 document.getElementById('dropdownMaxHeight200').Select3({
     dropdownMaxHeight: 200,
